@@ -57,23 +57,7 @@ namespace DuiLib {
 		void Move(SIZE szOffset, bool bNeedInvalidate = true);
 		bool DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
 
-		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
-
-		LRESULT MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, bool& bHandled);
-
-	protected:
-		virtual void ReleaseControl();
-		virtual bool DoCreateControl();
-
-	protected:
-		CLSID m_clsid;
-		CDuiString m_sModuleName;
-		bool m_bCreated;
-		bool m_bDelayCreate;
-		bool m_bMFC;
-		IOleObject* m_pUnk;
-		CActiveXCtrl* m_pControl;
-		HWND m_hwndHost;
+¡¢sddwqQED ZXCËíµÀ	HWND m_hwndHost;
 	};
 
 } // namespace DuiLib

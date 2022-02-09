@@ -92,28 +92,6 @@ namespace DuiLib {
 		DWORD GetTextStyle() const;
 		void SetTextStyle(UINT uStyle);
 		DWORD GetTextColor() const;
-		void SetTextColor(DWORD dwTextColor);
-		void SetTextPadding(RECT rc);
-		RECT GetTextPadding() const;
-		void SetFont(int index);
-		BOOL IsShowHtml();
-		void SetShowHtml(BOOL bShowHtml = TRUE);
-		LPCTSTR GetNormalImage() const;
-		void SetNormalImage(LPCTSTR pStrImage);
-		LPCTSTR GetHotImage() const;
-		void SetHotImage(LPCTSTR pStrImage);
-		LPCTSTR GetPushedImage() const;
-		void SetPushedImage(LPCTSTR pStrImage);
-		LPCTSTR GetFocusedImage() const;
-		void SetFocusedImage(LPCTSTR pStrImage);
-		LPCTSTR GetSepImage() const;
-		void SetSepImage(LPCTSTR pStrImage);
-
-		void DoEvent(TEventUI& event);
-		SIZE EstimateSize(SIZE szAvailable);
-		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
-		RECT GetThumbRect() const;
-
 		void PaintText(HDC hDC);
 		void PaintStatusImage(HDC hDC);
 
@@ -145,7 +123,51 @@ namespace DuiLib {
 
 	public:
 		BOOL GetColumeEditable();
-		void SetColumeEditable(BOOL bEnable);
+		void SetColumeEditable(BO		void SetTextColor(DWORD dwTextColor);
+		void SetTextPadding(RECT rc);
+		RECT GetTextPadding() const;
+		void SetFont(int index);
+		BOOL IsShowHtml();
+		void SetShowHtml(BOOL bShowHtml = TRUE);
+		LPCTSTR GetNormalImage() const;
+		void SetNormalImage(LPCTSTR pStrImage);
+		LPCTSTR GetHotImage() const;
+		void SetHotImage(LPCTSTR pStrImage);
+		LPCTSTR GetPushedImage() const;
+		void SetPushedImage(LPCTSTR pStrImage);
+		LPCTSTR GetFocusedImage() const;
+		void SetFocusedImage(LPCTSTR pStrImage);
+		LPCTSTR GetSepImage() const;
+		void SetSepImage(LPCTSTR pStrImage);
+
+		void DoEvent(TEventUI& event);
+		SIZE EstimateSize(SIZE szAvailable);
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+		RECT GetThumbRect() const;
+
+		void SetTextColor(DWORD dwTextColor);
+		void SetTextPadding(RECT rc);
+		RECT GetTextPadding() const;
+		void SetFont(int index);
+		BOOL IsShowHtml();
+		void SetShowHtml(BOOL bShowHtml = TRUE);
+		LPCTSTR GetNormalImage() const;
+		void SetNormalImage(LPCTSTR pStrImage);
+		LPCTSTR GetHotImage() const;
+		void SetHotImage(LPCTSTR pStrImage);
+		LPCTSTR GetPushedImage() const;
+		void SetPushedImage(LPCTSTR pStrImage);
+		LPCTSTR GetFocusedImage() const;
+		void SetFocusedImage(LPCTSTR pStrImage);
+		LPCTSTR GetSepImage() const;
+		void SetSepImage(LPCTSTR pStrImage);
+
+		void DoEvent(TEventUI& event);
+		SIZE EstimateSize(SIZE szAvailable);
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+		RECT GetThumbRect() const;
+
+		OL bEnable);
 
 		BOOL GetColumeComboable();
 		void SetColumeComboable(BOOL bEnable);

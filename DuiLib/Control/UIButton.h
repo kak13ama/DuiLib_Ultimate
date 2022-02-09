@@ -64,6 +64,22 @@ namespace DuiLib
 		void SetFocusedTextColor(DWORD dwColor);
 		DWORD GetFocusedTextColor() const;
 		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+		DWORD GetDisabledBkColor() const;
+		void SetHotTextColor(DWORD dwColor);
+		DWORD GetHotTextColor() const;
+		void SetPushedTextColor(DWORD dwColor);
+		DWORD GetPushedTextColor() const;
+		void SetFocusedTextColor(DWORD dwColor);
+		DWORD GetFocusedTextColor() const;
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+		DWORD GetDisabledBkColor() const;
+		void SetHotTextColor(DWORD dwColor);
+		DWORD GetHotTextColor() const;
+		void SetPushedTextColor(DWORD dwColor);
+		DWORD GetPushedTextColor() const;
+		void SetFocusedTextColor(DWORD dwColor);
+		DWORD GetFocusedTextColor() const;
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
 		void PaintText(HDC hDC);
 

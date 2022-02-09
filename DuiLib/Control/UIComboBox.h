@@ -17,7 +17,31 @@ namespace DuiLib
 
 		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 
-		void PaintText(HDC hDC);
+		{
+			DECLARE_DUICONTROL(CComboBoxUI)
+		public:
+			CComboBoxUI();
+			LPCTSTR GetClass() const;
+
+			void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+			{
+				DECLARE_DUICONTROL(CComboBoxUI)
+			public:
+				CComboBoxUI();
+				LPCTSTR GetClass() const;
+
+				void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+				{
+					DECLARE_DUICONTROL(CComboBoxUI)
+				public:
+					CComboBoxUI();
+					LPCTSTR GetClass() const;
+
+					void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+					void PaintText(HDC hDC);
 		void PaintStatusImage(HDC hDC);
 
 	protected:

@@ -35,6 +35,45 @@ namespace DuiLib
 		DWORD m_dwDisabledTextColor;
 		int m_iFont;
 		UINT m_uTextStyle;
+		//Paint
+		virtual void PaintText(HDC hDC);
+		virtual void PaintBorder(HDC hDC);
+		virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+		DWORD m_dwDisabledTextColor;
+		int m_iFont;
+		UINT m_uTextStyle;
+		//Paint
+		virtual void PaintText(HDC hDC);
+		virtual void PaintBorder(HDC hDC);
+		virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+		DWORD m_dwDisabledTextColor;
+		int m_iFont;
+		UINT m_uTextStyle;
+		//Paint
+		virtual void PaintText(HDC hDC);
+		virtual void PaintBorder(HDC hDC);
+		virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+		DWORD m_dwDisabledTextColor;
+		int m_iFont;
+		UINT m_uTextStyle;
 	};
 }
 #endif // __UIGROUPBOX_H__

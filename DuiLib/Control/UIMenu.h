@@ -173,88 +173,6 @@ public:
 		return m_pMainWndPaintManager;
 	}
 
-	virtual void SetMenuCheckInfo(CStdStringPtrMap* pInfo)
-	{
-		if (pInfo != NULL)
-			m_pMenuCheckInfo = pInfo;
-		else
-			m_pMenuCheckInfo = NULL;
-	}
-
-	virtual CStdStringPtrMap* GetMenuCheckInfo() const
-	{
-		return m_pMenuCheckInfo;
-	}
-
-protected:
-	typedef std::vector<MenuMenuReceiverImplBase*> ReceiversVector;
-	ReceiversVector *pReceivers_;
-	CPaintManagerUI* m_pMainWndPaintManager;
-	CStdStringPtrMap* m_pMenuCheckInfo;
-};
-
-////////////////////////////////////////////////////
-class UILIB_API MenuReceiverImpl : public MenuMenuReceiverImplBase
-{
-public:
-	MenuReceiverImpl()
-	{
-		pObservers_ = new ObserversVector;
-	}
-
-	~MenuReceiverImpl()
-	{
-		if (pObservers_ != NULL)
-		{
-			delete pObservers_;
-			pObservers_ = NULL;
-		}
-	}
-
-	virtual void AddObserver(MenuMenuObserverImplBase* observer)
-	{
-		pObservers_->push_back(observer);
-	}
-
-	virtual void RemoveObserver()
-	{
-		ObserversVector::iterator it = pObservers_->begin();
-		for (; it != pObservers_->end(); ++it)
-		{
-			(*it)->RemoveReceiver(this);
-		}
-	}
-
-	virtual BOOL Receive(ContextMenuParam param)
-	{
-		return BOOL();
-	}
-
-protected:
-	typedef std::vector<MenuMenuObserverImplBase*> ObserversVector;
-	ObserversVector* pObservers_;
-};
-
-/////////////////////////////////////////////////////////////////////////////////////
-//
-
-class CListUI;
-class CMenuWnd;
-class UILIB_API CMenuUI : public CListUI
-{
-	DECLARE_DUICONTROL(CMenuUI)
-public:
-	CMenuUI();
-	virtual ~CMenuUI();
-	CMenuWnd*	m_pWindow;
-    LPCTSTR GetClass() const;
-    LPVOID GetInterface(LPCTSTR pstrName);
-	UINT GetListType();
-
-	virtual void DoEvent(TEventUI& event);
-
-    virtual bool Add(CControlUI* pControl);
-    virtual bool AddAt(CControlUI* pControl, int iIndex);
 
     virtual int GetItemIndex(CControlUI* pControl) const;
     virtual bool SetItemIndex(CControlUI* pControl, int iIndex);
@@ -291,61 +209,6 @@ public:
 	/*
 	 *	@pOwner 一级菜单不要指定这个参数，这是菜单内部使用的
 	 *	@xml	菜单的布局文件
-	 *	@point	菜单的左上角坐标
-	 *	@pMainPaintManager	菜单的父窗体管理器指针
-	 *	@pMenuCheckInfo	保存菜单的单选和复选信息结构指针
-	 *	@dwAlignment		菜单的出现位置，默认出现在鼠标的右下侧。
-	 */
-
-    void Init(CMenuElementUI* pOwner, STRINGorID xml, POINT point,
-		CPaintManagerUI* pMainPaintManager, CStdStringPtrMap* pMenuCheckInfo = NULL,
-		DWORD dwAlignment = eMenuAlignment_Left | eMenuAlignment_Top);
-    LPCTSTR GetWindowClassName() const;
-    void OnFinalMessage(HWND hWnd);
-	void Notify(TNotifyUI& msg);
-	CControlUI* CreateControl(LPCTSTR pstrClassName);
-
-	LRESULT OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
-	LRESULT OnKillFocus(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
-	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
-    LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
-
-	BOOL Receive(ContextMenuParam param);
-
-	// 获取根菜单控件，用于动态添加子菜单
-	CMenuUI* GetMenuUI();
-
-	// 重新调整菜单的大小
-	void ResizeMenu();
-
-	// 重新调整子菜单的大小
-	void ResizeSubMenu();
-	void setDPI(int DPI);
-
-public:
-
-	POINT			m_BasedPoint;
-	STRINGorID		m_xml;
-    CPaintManagerUI m_pm;
-    CMenuElementUI* m_pOwner;
-    CMenuUI*	m_pLayout;
-	DWORD		m_dwAlignment;	//菜单对齐方式
-};
-
-class CListContainerElementUI;
-class UILIB_API CMenuElementUI : public CListContainerElementUI
-{
-	DECLARE_DUICONTROL(CMenuElementUI)
-	friend CMenuWnd;
-public:
-    CMenuElementUI();
-	~CMenuElementUI();
-
-    LPCTSTR GetClass() const;
-    LPVOID GetInterface(LPCTSTR pstrName);
-    bool DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
-	void DrawItemText(HDC hDC, const RECT& rcItem);
-	SIZE EstimateSize(SIZE szAvailable);
 
 	void DoEvent(TEventUI& event);
 
@@ -376,7 +239,62 @@ public:
 protected:
 	CMenuWnd*	m_pWindow;
 
-	bool		m_bDrawLine;	//画分隔线
+	bool		m_bDrawLine;	//画分隔线	 *	@point	菜单的左上角坐标
+	 *	@pMainPaintManager	菜单的父窗体管理器指针
+	 *	@pMenuCheckInfo	保存菜单的单选和复选信息结构指针
+	 *	@dwAlignment		菜单的出现位置，默认出现在鼠标的右下侧。
+	 */
+
+	void Init(CMenuElementUI* pOwner, STRINGorID xml, POINT point,
+		CPaintManagerUI* pMainPaintManager, CStdStringPtrMap* pMenuCheckInfo = NULL,
+		DWORD dwAlignment = eMenuAlignment_Left | eMenuAlignment_Top);
+	LPCTSTR GetWindowClassName() const;
+	void OnFinalMessage(HWND hWnd);
+	void Notify(TNotifyUI& msg);
+	CControlUI* CreateControl(LPCTSTR pstrClassName);
+
+	LRESULT OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
+	LRESULT OnKillFocus(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
+	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
+	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+	BOOL Receive(ContextMenuParam param);
+
+	// 获取根菜单控件，用于动态添加子菜单
+	CMenuUI* GetMenuUI();
+
+	// 重新调整菜单的大小
+	void ResizeMenu();
+
+	// 重新调整子菜单的大小
+	void ResizeSubMenu();
+	void setDPI(int DPI);
+
+public:
+
+	POINT			m_BasedPoint;
+	STRINGorID		m_xml;
+	CPaintManagerUI m_pm;
+	CMenuElementUI* m_pOwner;
+	CMenuUI* m_pLayout;
+	DWORD		m_dwAlignment;	//菜单对齐方式
+};
+
+class CListContainerElementUI;
+class UILIB_API CMenuElementUI : public CListContainerElementUI
+{
+	DECLARE_DUICONTROL(CMenuElementUI)
+	friend CMenuWnd;
+public:
+	CMenuElementUI();
+	~CMenuElementUI();
+
+	LPCTSTR GetClass() const;
+	LPVOID GetInterface(LPCTSTR pstrName);
+	bool DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
+	void DrawItemText(HDC hDC, const RECT& rcItem);
+	SIZE EstimateSize(SIZE szAvailable);
+
 	DWORD		m_dwLineColor;  //分隔线颜色
 	RECT		m_rcLinePadding;	//分割线的左右边距
 

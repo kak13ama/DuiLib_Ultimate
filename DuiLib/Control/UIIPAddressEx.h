@@ -7,7 +7,35 @@
 
 namespace DuiLib
 {
-	
+    void IncNum();
+    void DecNum();
+
+protected:
+    int m_nFirst;
+    int m_nSecond;
+    int m_nThird;
+    int m_nFourth;
+    int m_nActiveSection;
+
+    TCHAR m_chNum;
+    CDuiString m_strNum;
+};
+}
+#endif // __UIIPADDRESSEX_H__        void IncNum();
+void DecNum();
+
+    protected:
+        int m_nFirst;
+        int m_nSecond;
+        int m_nThird;
+        int m_nFourth;
+        int m_nActiveSection;
+
+        TCHAR m_chNum;
+        CDuiString m_strNum;
+    };
+}
+#endif // __UIIPADDRESSEX_H__	
     /// IPÊäÈë¿Ø¼þ
     class UILIB_API CIPAddressExUI : public CEditUI
     {
@@ -23,7 +51,35 @@ namespace DuiLib
         void SetIP(LPCTSTR lpIP);
         CDuiString GetIP();
 
-    private:
+    private:        void IncNum();
+           void DecNum();
+
+    protected:
+        int m_nFirst;
+        int m_nSecond;
+        int m_nThird;
+        int m_nFourth;
+        int m_nActiveSection;
+
+        TCHAR m_chNum;
+        CDuiString m_strNum;
+    };
+}
+#endif // __UIIPADDRESSEX_H__        void IncNum();
+void DecNum();
+
+    protected:
+        int m_nFirst;
+        int m_nSecond;
+        int m_nThird;
+        int m_nFourth;
+        int m_nActiveSection;
+
+        TCHAR m_chNum;
+        CDuiString m_strNum;
+    };
+}
+#endif // __UIIPADDRESSEX_H__
         void CharToInt();
         void GetNumInput(TCHAR chKey);
         void UpdateText();

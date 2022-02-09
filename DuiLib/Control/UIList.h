@@ -49,17 +49,15 @@ namespace DuiLib {
 		virtual LPCTSTR GetItemText(CControlUI* pList, int iItem, int iSubItem) = 0;
 		virtual DWORD GetItemTextColor(CControlUI* pList, int iItem, int iSubItem, int iState) = 0;// iState：0-正常、1-激活、2-选择、3-禁用
 	};
-
-	class IListOwnerUI
-	{
-	public:
-		virtual UINT GetListType() = 0;
-		virtual TListInfoUI* GetListInfo() = 0;
-		virtual int GetCurSel() const = 0;
-		virtual bool SelectItem(int iIndex, bool bTakeFocus = false) = 0;
-		virtual bool SelectMultiItem(int iIndex, bool bTakeFocus = false) = 0;
-		virtual bool UnSelectItem(int iIndex, bool bOthers = false) = 0;
-		virtual void DoEvent(TEventUI& event) = 0;
+	virtual IListOwnerUI* GetOwner() = 0;
+	virtual void SetOwner(CControlUI* pOwner) = 0;
+	virtual bool IsSelected() const = 0;
+	virtual bool Select(bool bSelect = true) = 0;
+	virtual bool SelectMulti(bool bSelect = true) = 0;
+	virtual bool IsExpanded() const = 0;
+	virtual bool Expand(bool bExpand = true) = 0;
+	virtual void DrawItemText(HDC hDC, const RECT& rcItem) = 0;
+	virtual void DoEvent(TEventUI& event) = 0;
 	};
 
 	class IListUI : public IListOwnerUI
@@ -85,14 +83,6 @@ namespace DuiLib {
 	public:
 		virtual int GetIndex() const = 0;
 		virtual void SetIndex(int iIndex) = 0;
-		virtual IListOwnerUI* GetOwner() = 0;
-		virtual void SetOwner(CControlUI* pOwner) = 0;
-		virtual bool IsSelected() const = 0;
-		virtual bool Select(bool bSelect = true) = 0;
-		virtual bool SelectMulti(bool bSelect = true) = 0;
-		virtual bool IsExpanded() const = 0;
-		virtual bool Expand(bool bExpand = true) = 0;
-		virtual void DrawItemText(HDC hDC, const RECT& rcItem) = 0;
 	};
 
 

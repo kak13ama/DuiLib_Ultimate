@@ -62,22 +62,6 @@ namespace DuiLib {
 		void Attach(CControlUI* pOwner);
 
 		virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE);
-		virtual void StopAnimation(int nAnimationID = 0);
-		virtual BOOL IsAnimationRunning(int nAnimationID);
-		virtual int GetCurrentFrame(int nAnimationID = 0);
-		virtual BOOL SetCurrentFrame(int nFrame, int nAnimationID = 0);
-
-		virtual void OnAnimationStart(int nAnimationID, BOOL bFirstLoop) {};
-		virtual void OnAnimationStep(int nTotalFrame, int nCurFrame, int nAnimationID) {};
-		virtual void OnAnimationStop(int nAnimationID) {};
-
-		virtual void OnAnimationElapse(int nAnimationID);
-
-	protected:
-		CAnimationData* GetAnimationDataByID(int nAnimationID);
-
-	protected:
-		CControlUI* m_pControl;
 		Imp * m_pImp;
 	};
 

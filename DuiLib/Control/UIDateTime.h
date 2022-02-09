@@ -3,6 +3,69 @@
 
 #pragma once
 
+	public:
+		CDateTimeUI();
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		SYSTEMTIME& GetTime();
+		void SetTime(SYSTEMTIME* pst);
+
+		void SetReadOny(bool bReadOnly);
+		bool IsReadOnly() const;
+		void SetShowTime(bool bShowTime);
+		bool IsShowTime() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+		void SetPos(RECT rc, bool bNeedInvalidate = true);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+
+	public:
+		CDateTimeUI();
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		SYSTEMTIME& GetTime();
+		void SetTime(SYSTEMTIME* pst);
+
+		void SetReadOny(bool bReadOnly);
+		bool IsReadOnly() const;
+		void SetShowTime(bool bShowTime);
+		bool IsShowTime() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+		void SetPos(RECT rc, bool bNeedInvalidate = true);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+
+	public:
+		CDateTimeUI();
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		SYSTEMTIME& GetTime();
+		void SetTime(SYSTEMTIME* pst);
+
+		void SetReadOny(bool bReadOnly);
+		bool IsReadOnly() const;
+		void SetShowTime(bool bShowTime);
+		bool IsShowTime() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+		void SetPos(RECT rc, bool bNeedInvalidate = true);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+
 namespace DuiLib
 {
 	class CDateTimeWnd;

@@ -67,6 +67,26 @@ namespace DuiLib{
 		void GetHotKey(WORD &wVirtualKeyCode, WORD &wModifiers) const;
 		DWORD GetHotKey(void) const;
 		void SetHotKey(WORD wVirtualKeyCode, WORD wModifiers);
+		void SetHotImage(LPCTSTR pStrImage);
+		LPCTSTR GetFocusedImage();
+		void SetFocusedImage(LPCTSTR pStrImage);
+		LPCTSTR GetDisabledImage();
+		void SetDisabledImage(LPCTSTR pStrImage);
+		void SetNativeBkColor(DWORD dwBkColor);
+		DWORD GetNativeBkColor() const;
+
+		void SetPos(RECT rc);
+		void SetVisible(bool bVisible = true);
+		void SetHotImage(LPCTSTR pStrImage);
+		LPCTSTR GetFocusedImage();
+		void SetFocusedImage(LPCTSTR pStrImage);
+		LPCTSTR GetDisabledImage();
+		void SetDisabledImage(LPCTSTR pStrImage);
+		void SetNativeBkColor(DWORD dwBkColor);
+		DWORD GetNativeBkColor() const;
+
+		void SetPos(RECT rc);
+		void SetVisible(bool bVisible = true);
 
 	protected:
 		CHotKeyWnd * m_pWindow;
@@ -76,6 +96,16 @@ namespace DuiLib{
 		CDuiString m_sFocusedImage;
 		CDuiString m_sDisabledImage;
 		DWORD m_dwHotKeybkColor;
+		void SetHotImage(LPCTSTR pStrImage);
+		LPCTSTR GetFocusedImage();
+		void SetFocusedImage(LPCTSTR pStrImage);
+		LPCTSTR GetDisabledImage();
+		void SetDisabledImage(LPCTSTR pStrImage);
+		void SetNativeBkColor(DWORD dwBkColor);
+		DWORD GetNativeBkColor() const;
+
+		void SetPos(RECT rc);
+		void SetVisible(bool bVisible = true);
 
 	protected:
 		WORD m_wVirtualKeyCode;

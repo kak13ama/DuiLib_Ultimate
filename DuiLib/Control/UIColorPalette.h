@@ -45,18 +45,31 @@ namespace DuiLib {
 	private:
 		HDC			m_MemDc;
 		HBITMAP		m_hMemBitmap;
+		virtual void PaintBkColor(HDC hDC);
+		virtual void PaintPallet(HDC hDC);
+
+	protected:
+		//更新数据
+		void UpdatePalletData();
+		void UpdateBarData();
+
+	private:
+		HDC			m_MemDc;
+		HBITMAP		m_hMemBitmap;
+		virtual void PaintBkColor(HDC hDC);
+		virtual void PaintPallet(HDC hDC);
+
+	protected:
+		//更新数据
+		void UpdatePalletData();
+		void UpdateBarData();
+
+	private:
+		HDC			m_MemDc;
+		HBITMAP		m_hMemBitmap;
 		BITMAP		m_bmInfo;
 		BYTE		*m_pBits;
 		UINT		m_uButtonState;
-		bool		m_bIsInBar;
-		bool		m_bIsInPallet;
-		int			m_nCurH;
-		int			m_nCurS;
-		int			m_nCurB;
-
-		int			m_nPalletHeight;
-		int			m_nBarHeight;
-		CDuiPoint		m_ptLastPalletMouse;
 		CDuiPoint		m_ptLastBarMouse;
 		CDuiString  m_strThumbImage;
 	};

@@ -13,6 +13,29 @@
 
 class CActiveXCtrl;
 
+virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** ppvObject);
+virtual ULONG STDMETHODCALLTYPE AddRef(void);
+virtual ULONG STDMETHODCALLTYPE Release(void);
+
+HRESULT OnReadyStateChange(long newState);
+HRESULT OnProgress(long percentDone);
+HRESULT FSCommand(_bstr_t command, _bstr_t args);
+HRESULT FlashCall(_bstr_t request);
+
+virtual void ReleaseControl();
+HRESULT RegisterEventHandler(BOOL inAdvise);
+
+// ITranslateAccelerator
+// Duilib消息分发给WebBrowser
+virtual LRESULT TranslateAccelerator(MSG* pMsg);
+
+	private:
+		LONG m_dwRef;
+		DWORD m_dwCookie;
+		CFlashEventHandler* m_pFlashEventHandler;
+	};
+}
+
 namespace DuiLib
 {
 	class UILIB_API CFlashUI

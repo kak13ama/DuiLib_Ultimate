@@ -38,19 +38,6 @@ namespace DuiLib
 		void	InitGifImage();
 		void	DeleteGif();
 		void    OnTimer( UINT_PTR idEvent );
-		void	DrawFrame( HDC hDC );		// 绘制GIF每帧
-
-	private:
-		Gdiplus::Image	*m_pGifImage;
-		UINT			m_nFrameCount;				// gif图片总帧数
-		UINT			m_nFramePosition;			// 当前放到第几帧
-		Gdiplus::PropertyItem*	m_pPropertyItem;	// 帧与帧之间间隔时间
-
-		CDuiString		m_sBkImage;
-		bool			m_bIsAutoPlay;				// 是否自动播放gif
-		bool			m_bIsAutoSize;				// 是否自动根据图片设置大小
-		bool			m_bIsPlaying;
-	};
-}
+、
 
 #endif // GifAnimUI_h__

@@ -4,6 +4,32 @@
 #pragma once
 
 //给该控件添加一个属性dtstyle
+void SetReadOnly(bool bReadOnly);
+bool IsReadOnly() const;
+
+void UpdateText();
+
+void DoEvent(TEventUI& event);
+
+void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	protected:
+		DWORD	m_dwIP;
+		bool       m_bReadOnly;
+		int		m_nIPUpdateFlag;
+		void SetReadOnly(bool bReadOnly);
+		bool IsReadOnly() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	protected:
+		DWORD	m_dwIP;
+		bool       m_bReadOnly;
+		int		m_nIPUpdateFlag;
 
 namespace DuiLib
 {
@@ -13,6 +39,32 @@ namespace DuiLib
 	class UILIB_API CIPAddressUI : public CLabelUI
 	{
 		DECLARE_DUICONTROL(CIPAddressUI)
+		void SetReadOnly(bool bReadOnly);
+		bool IsReadOnly() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	protected:
+		DWORD	m_dwIP;
+		bool       m_bReadOnly;
+		int		m_nIPUpdateFlag;
+		void SetReadOnly(bool bReadOnly);
+		bool IsReadOnly() const;
+
+		void UpdateText();
+
+		void DoEvent(TEventUI& event);
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	protected:
+		DWORD	m_dwIP;
+		bool       m_bReadOnly;
+		int		m_nIPUpdateFlag;
 
 		friend class CIPAddressWnd;
 	public:

@@ -15,6 +15,42 @@ namespace DuiLib
 		LPCTSTR GetClass() const;
 		LPVOID GetInterface(LPCTSTR pstrName);
 		UINT GetControlFlags() const;
+		virtual void SetText(LPCTSTR pstrText);
+
+	protected:
+		DWORD	m_dwTextColor;
+		DWORD	m_dwDisabledTextColor;
+		int		m_iFont;
+		UINT	m_uTextStyle;
+		RECT	m_rcTextPadding;
+		bool	m_bShowHtml;
+		bool	m_bAutoCalcWidth;
+		bool	m_bAutoCalcHeight;
+
+		SIZE    m_szAvailableLast;
+		SIZE    m_cxyFixedLast;
+		bool    m_bNeedEstimateSize;
+	};
+}
+
+virtual void SetText(LPCTSTR pstrText);
+
+	protected:
+		DWORD	m_dwTextColor;
+		DWORD	m_dwDisabledTextColor;
+		int		m_iFont;
+		UINT	m_uTextStyle;
+		RECT	m_rcTextPadding;
+		bool	m_bShowHtml;
+		bool	m_bAutoCalcWidth;
+		bool	m_bAutoCalcHeight;
+
+		SIZE    m_szAvailableLast;
+		SIZE    m_cxyFixedLast;
+		bool    m_bNeedEstimateSize;
+	};
+}
+
 
 		void SetTextStyle(UINT uStyle);
 		UINT GetTextStyle() const;

@@ -26,6 +26,75 @@ namespace DuiLib
 		bool IsReadOnly() const;
 		void SetPasswordMode(bool bPasswordMode);
 		bool IsPasswordMode() const;
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintStatusImage(HDC hDC);
+		void PaintText(HDC hDC);
+
+	protected:
+		CEditWnd* m_pWindow;
+
+		UINT m_uMaxChar;
+		bool m_bReadOnly;
+		bool m_bPasswordMode;
+		bool m_bAutoSelAll;
+		TCHAR m_cPasswordChar;
+		UINT m_uButtonState;
+		CDuiString m_sNormalImage;
+		CDuiString m_sHotImage;
+		CDuiString m_sFocusedImage;
+		CDuiString m_sDisabledImage;
+		CDuiString m_sTipValue;
+		DWORD m_dwTipValueColor;
+		DWORD m_dwEditbkColor;
+		DWORD m_dwEditTextColor;
+		int m_iWindowStyls;
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintStatusImage(HDC hDC);
+		void PaintText(HDC hDC);
+
+	protected:
+		CEditWnd* m_pWindow;
+
+		UINT m_uMaxChar;
+		bool m_bReadOnly;
+		bool m_bPasswordMode;
+		bool m_bAutoSelAll;
+		TCHAR m_cPasswordChar;
+		UINT m_uButtonState;
+		CDuiString m_sNormalImage;
+		CDuiString m_sHotImage;
+		CDuiString m_sFocusedImage;
+		CDuiString m_sDisabledImage;
+		CDuiString m_sTipValue;
+		DWORD m_dwTipValueColor;
+		DWORD m_dwEditbkColor;
+		DWORD m_dwEditTextColor;
+		int m_iWindowStyls;
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintStatusImage(HDC hDC);
+		void PaintText(HDC hDC);
+
+	protected:
+		CEditWnd* m_pWindow;
+
+		UINT m_uMaxChar;
+		bool m_bReadOnly;
+		bool m_bPasswordMode;
+		bool m_bAutoSelAll;
+		TCHAR m_cPasswordChar;
+		UINT m_uButtonState;
+		CDuiString m_sNormalImage;
+		CDuiString m_sHotImage;
+		CDuiString m_sFocusedImage;
+		CDuiString m_sDisabledImage;
+		CDuiString m_sTipValue;
+		DWORD m_dwTipValueColor;
+		DWORD m_dwEditbkColor;
+		DWORD m_dwEditTextColor;
+		int m_iWindowStyls;
 		void SetPasswordChar(TCHAR cPasswordChar);
 		TCHAR GetPasswordChar() const;
 		void SetNumberOnly(bool bNumberOnly);
