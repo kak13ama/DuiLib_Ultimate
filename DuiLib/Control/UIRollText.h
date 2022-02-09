@@ -23,6 +23,44 @@ namespace DuiLib
 		CRollTextUI(void);
 		~CRollTextUI(void);
 
+		namespace DuiLib
+		{
+#define ROLLTEXT_LEFT		0
+#define ROLLTEXT_RIGHT		1
+#define ROLLTEXT_UP 		2
+#define ROLLTEXT_DOWN		3
+
+#define ROLLTEXT_TIMERID			20
+#define ROLLTEXT_TIMERID_SPAN		50U
+
+#define ROLLTEXT_ROLL_END			21
+#define ROLLTEXT_ROLL_END_SPAN		1000*6U
+
+			class UILIB_API CRollTextUI : public CLabelUI
+			{
+				DECLARE_DUICONTROL(CRollTextUI)
+			public:
+				CRollTextUI(void);
+
+				namespace DuiLib
+				{
+#define ROLLTEXT_LEFT		0
+#define ROLLTEXT_RIGHT		1
+#define ROLLTEXT_UP 		2
+#define ROLLTEXT_DOWN		3
+
+#define ROLLTEXT_TIMERID			20
+#define ROLLTEXT_TIMERID_SPAN		50U
+
+#define ROLLTEXT_ROLL_END			21
+#define ROLLTEXT_ROLL_END_SPAN		1000*6U
+
+					class UILIB_API CRollTextUI : public CLabelUI
+					{
+						DECLARE_DUICONTROL(CRollTextUI)
+					public:
+						CRollTextUI(void);
+
 	public:
 		LPCTSTR GetClass() const;
 		LPVOID GetInterface(LPCTSTR pstrName);
@@ -32,6 +70,44 @@ namespace DuiLib
 		virtual void DoEvent(TEventUI& event);
 		virtual void SetPos(RECT rc);
 		virtual void SetText(LPCTSTR pstrText);
+
+		namespace DuiLib
+		{
+#define ROLLTEXT_LEFT		0
+#define ROLLTEXT_RIGHT		1
+#define ROLLTEXT_UP 		2
+#define ROLLTEXT_DOWN		3
+
+#define ROLLTEXT_TIMERID			20
+#define ROLLTEXT_TIMERID_SPAN		50U
+
+#define ROLLTEXT_ROLL_END			21
+#define ROLLTEXT_ROLL_END_SPAN		1000*6U
+
+			class UILIB_API CRollTextUI : public CLabelUI
+			{
+				DECLARE_DUICONTROL(CRollTextUI)
+			public:
+				CRollTextUI(void);
+
+				namespace DuiLib
+				{
+#define ROLLTEXT_LEFT		0
+#define ROLLTEXT_RIGHT		1
+#define ROLLTEXT_UP 		2
+#define ROLLTEXT_DOWN		3
+
+#define ROLLTEXT_TIMERID			20
+#define ROLLTEXT_TIMERID_SPAN		50U
+
+#define ROLLTEXT_ROLL_END			21
+#define ROLLTEXT_ROLL_END_SPAN		1000*6U
+
+					class UILIB_API CRollTextUI : public CLabelUI
+					{
+						DECLARE_DUICONTROL(CRollTextUI)
+					public:
+						CRollTextUI(void);
 
 	public:
 		void BeginRoll(int nDirect = ROLLTEXT_RIGHT, LONG lTimeSpan = ROLLTEXT_TIMERID_SPAN, LONG lMaxTimeLimited = 60);

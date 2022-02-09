@@ -4,49 +4,7 @@
 namespace DuiLib
 {
 	IMPLEMENT_DUICONTROL(CComboBoxUI)
-
-	CComboBoxUI::CComboBoxUI()
-	{
-		m_nArrowWidth = 0;
-	}
-
-	LPCTSTR CComboBoxUI::GetClass() const
-	{
-		return _T("ComboBoxUI");
-	}
-
-	void CComboBoxUI::SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue)
-	{
-		if (_tcsicmp(pstrName, _T("arrowimage")) == 0)
-			m_sArrowImage = pstrValue;
-		else
-			CComboUI::SetAttribute(pstrName, pstrValue);
-	}
-
-	void CComboBoxUI::PaintStatusImage(HDC hDC)
-	{
-		if (m_sArrowImage.IsEmpty())
-			CComboUI::PaintStatusImage(hDC);
-		else
-		{
-			// get index
-			if( IsFocused() ) m_uButtonState |= UISTATE_FOCUSED;
-			else m_uButtonState &= ~ UISTATE_FOCUSED;
-			if( !IsEnabled() ) m_uButtonState |= UISTATE_DISABLED;
-			else m_uButtonState &= ~ UISTATE_DISABLED;
-
-			int nIndex = 0;
-			if ((m_uButtonState & UISTATE_DISABLED) != 0)
-				nIndex = 4;
-			else if ((m_uButtonState & UISTATE_PUSHED) != 0)
-				nIndex = 2;
-			else if ((m_uButtonState & UISTATE_HOT) != 0)
-				nIndex = 1;
-			else if ((m_uButtonState & UISTATE_FOCUSED) != 0)
-				nIndex = 3;
-
-			// make modify string
-			CDuiString sModify = m_sArrowImage;
+		CDuiString sModify = m_sArrowImage;
 
 			int nPos1 = sModify.Find(_T("source"));
 			int nPos2 = sModify.Find(_T("'"), nPos1 + 7);

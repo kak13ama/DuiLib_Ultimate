@@ -46,6 +46,96 @@ namespace DuiLib {
 		static Gdiplus::Image* GdiplusLoadImage(LPVOID pBuf, size_t dwSize);
 
 		static bool MakeImageDest(const RECT& rcControl, const CDuiSize& szImage, const CDuiString& sAlign, const RECT& rcPadding, RECT& rcDest);
+		/////////////////////////////////////////////////////////////////////////////////////
+//
+
+		class UILIB_API CRenderClip
+		{
+		public:
+			~CRenderClip();
+			RECT rcItem;
+			HDC hDC;
+			HRGN hRgn;
+			HRGN hOldRgn;
+
+			static void GenerateClip(HDC hDC, RECT rc, CRenderClip& clip);
+			static void GenerateRoundClip(HDC hDC, RECT rc, RECT rcItem, int width, int height, CRenderClip& clip);
+			static void UseOldClipBegin(HDC hDC, CRenderClip& clip);
+			static void UseOldClipEnd(HDC hDC, CRenderClip& clip);
+		};
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		//
+
+		class UILIB_API CRenderEngine
+		{
+		public:
+			static DWORD AdjustColor(DWORD dwColor, short H, short S, short L);
+			static HBITMAP CreateARGB32Bitmap(HDC hDC, int cx, int cy, BYTE** pBits);
+			static void AdjustImage(bool bUseHSL, TImageInfo* imageInfo, short H, short S, short L);
+			static TImageInfo* LoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0, HINSTANCE instance = NULL);
+#ifdef USE_XIMAGE_EFFECT
+			static CxImage* LoadGifImageX(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
+			/////////////////////////////////////////////////////////////////////////////////////
+			//
+
+			class UILIB_API CRenderClip
+			{
+			public:
+				~CRenderClip();
+				RECT rcItem;
+				HDC hDC;
+				HRGN hRgn;
+				HRGN hOldRgn;
+
+				static void GenerateClip(HDC hDC, RECT rc, CRenderClip& clip);
+				static void GenerateRoundClip(HDC hDC, RECT rc, RECT rcItem, int width, int height, CRenderClip& clip);
+				static void UseOldClipBegin(HDC hDC, CRenderClip& clip);
+				static void UseOldClipEnd(HDC hDC, CRenderClip& clip);
+			};
+
+			/////////////////////////////////////////////////////////////////////////////////////
+			//
+
+			class UILIB_API CRenderEngine
+			{
+			public:
+				static DWORD AdjustColor(DWORD dwColor, short H, short S, short L);
+				static HBITMAP CreateARGB32Bitmap(HDC hDC, int cx, int cy, BYTE** pBits);
+				static void AdjustImage(bool bUseHSL, TImageInfo* imageInfo, short H, short S, short L);
+				static TImageInfo* LoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0, HINSTANCE instance = NULL);
+#ifdef USE_XIMAGE_EFFECT
+				static CxImage* LoadGifImageX(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
+				/////////////////////////////////////////////////////////////////////////////////////
+				//
+
+				class UILIB_API CRenderClip
+				{
+				public:
+					~CRenderClip();
+					RECT rcItem;
+					HDC hDC;
+					HRGN hRgn;
+					HRGN hOldRgn;
+
+					static void GenerateClip(HDC hDC, RECT rc, CRenderClip& clip);
+					static void GenerateRoundClip(HDC hDC, RECT rc, RECT rcItem, int width, int height, CRenderClip& clip);
+					static void UseOldClipBegin(HDC hDC, CRenderClip& clip);
+					static void UseOldClipEnd(HDC hDC, CRenderClip& clip);
+				};
+
+				/////////////////////////////////////////////////////////////////////////////////////
+				//
+
+				class UILIB_API CRenderEngine
+				{
+				public:
+					static DWORD AdjustColor(DWORD dwColor, short H, short S, short L);
+					static HBITMAP CreateARGB32Bitmap(HDC hDC, int cx, int cy, BYTE** pBits);
+					static void AdjustImage(bool bUseHSL, TImageInfo* imageInfo, short H, short S, short L);
+					static TImageInfo* LoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0, HINSTANCE instance = NULL);
+#ifdef USE_XIMAGE_EFFECT
+					static CxImage* LoadGifImageX(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
 
 		static void DrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText,DWORD dwTextColor, \
 			int iFont, UINT uStyle, DWORD dwTextBKColor);

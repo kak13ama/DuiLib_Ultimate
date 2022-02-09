@@ -53,7 +53,39 @@ namespace DuiLib
 		void SetVisibleCheckBtn(bool _IsVisibled);
 		bool GetVisibleCheckBtn();
 		void SetItemTextColor(DWORD _dwItemTextColor);
-		DWORD GetItemTextColor() const;
+		class CCheckBoxUI;
+		class CLabelUI;
+		class COptionUI;
+
+		class UILIB_API CTreeNodeUI : public CListContainerElementUI
+		{
+			DECLARE_DUICONTROL(CTreeNodeUI)
+		public:
+			CTreeNodeUI(CTreeNodeUI* _ParentNode = NULL);
+			~CTreeNodeUI(void);
+
+		public:
+			LPCTSTR GetClass() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+			void DoEvent(TEventUI& event);
+			void Invalidate();
+			class CCheckBoxUI;
+			class CLabelUI;
+			class COptionUI;
+
+			class UILIB_API CTreeNodeUI : public CListContainerElementUI
+			{
+				DECLARE_DUICONTROL(CTreeNodeUI)
+			public:
+				CTreeNodeUI(CTreeNodeUI* _ParentNode = NULL);
+				~CTreeNodeUI(void);
+
+			public:
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+				void DoEvent(TEventUI& event);
+				void Invalidate();
+				DWORD GetItemTextColor() const;
 		void SetItemHotTextColor(DWORD _dwItemHotTextColor);
 		DWORD GetItemHotTextColor() const;
 		void SetSelItemTextColor(DWORD _dwSelItemTextColor);

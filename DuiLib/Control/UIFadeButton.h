@@ -36,7 +36,27 @@ namespace DuiLib {
 			FADE_IN_ID			= 8,
 			FADE_OUT_ID			= 9,
 			FADE_ELLAPSE		= 10,
-			FADE_FRAME_COUNT	= 30,
+			CFadeButtonUI();
+		virtual ~CFadeButtonUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		CFadeButtonUI();
+		virtual ~CFadeButtonUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		CFadeButtonUI();
+		virtual ~CFadeButtonUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		CFadeButtonUI();
+		virtual ~CFadeButtonUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		FADE_FRAME_COUNT	= 30,
 		};
 	};
 

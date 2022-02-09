@@ -46,6 +46,72 @@ namespace DuiLib {
 		bool AddAt(CControlUI* pControl, int iIndex);
 		bool Remove(CControlUI* pControl);
 		bool RemoveAt(int iIndex);
+		virtual CControlUI* GetItemAt(int iIndex) const = 0;
+		virtual int GetItemIndex(CControlUI* pControl) const = 0;
+		virtual bool SetItemIndex(CControlUI* pControl, int iIndex) = 0;
+		virtual int GetCount() const = 0;
+		virtual bool Add(CControlUI* pControl) = 0;
+		virtual bool AddAt(CControlUI* pControl, int iIndex) = 0;
+		virtual bool Remove(CControlUI* pControl) = 0;
+		virtual bool RemoveAt(int iIndex) = 0;
+		virtual void RemoveAll() = 0;
+	};
+
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	class CScrollBarUI;
+
+	class UILIB_API CContainerUI : public CControlUI, public IContainerUI
+	{
+		DECLARE_DUICONTROL(CContainerUI)
+
+	public:
+		CContainerUI();
+		virtual CControlUI* GetItemAt(int iIndex) const = 0;
+		virtual int GetItemIndex(CControlUI* pControl) const = 0;
+		virtual bool SetItemIndex(CControlUI* pControl, int iIndex) = 0;
+		virtual int GetCount() const = 0;
+		virtual bool Add(CControlUI* pControl) = 0;
+		virtual bool AddAt(CControlUI* pControl, int iIndex) = 0;
+		virtual bool Remove(CControlUI* pControl) = 0;
+		virtual bool RemoveAt(int iIndex) = 0;
+		virtual void RemoveAll() = 0;
+	};
+
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	class CScrollBarUI;
+
+	class UILIB_API CContainerUI : public CControlUI, public IContainerUI
+	{
+		DECLARE_DUICONTROL(CContainerUI)
+
+	public:
+		CContainerUI();
+		virtual CControlUI* GetItemAt(int iIndex) const = 0;
+		virtual int GetItemIndex(CControlUI* pControl) const = 0;
+		virtual bool SetItemIndex(CControlUI* pControl, int iIndex) = 0;
+		virtual int GetCount() const = 0;
+		virtual bool Add(CControlUI* pControl) = 0;
+		virtual bool AddAt(CControlUI* pControl, int iIndex) = 0;
+		virtual bool Remove(CControlUI* pControl) = 0;
+		virtual bool RemoveAt(int iIndex) = 0;
+		virtual void RemoveAll() = 0;
+	};
+
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	class CScrollBarUI;
+
+	class UILIB_API CContainerUI : public CControlUI, public IContainerUI
+	{
+		DECLARE_DUICONTROL(CContainerUI)
+
+	public:
+		CContainerUI();
 		void RemoveAll();
 
 		void DoEvent(TEventUI& event);

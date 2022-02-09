@@ -51,6 +51,114 @@ namespace DuiLib
 		void SetButton2PushedImage(LPCTSTR pStrImage);
 		LPCTSTR GetButton2DisabledImage();
 		void SetButton2DisabledImage(LPCTSTR pStrImage);
+		{
+			DECLARE_DUICONTROL(CScrollBarUI)
+		public:
+			CScrollBarUI();
+
+			LPCTSTR GetClass() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+
+			CContainerUI* GetOwner() const;
+			void SetOwner(CContainerUI * pOwner);
+
+			void SetVisible(bool bVisible = true);
+			void SetEnabled(bool bEnable = true);
+			void SetFocus();
+
+			bool IsHorizontal();
+			void SetHorizontal(bool bHorizontal = true);
+			int GetScrollRange() const;
+			void SetScrollRange(int nRange);
+			int GetScrollPos() const;
+			void SetScrollPos(int nPos);
+			int GetLineSize() const;
+			void SetLineSize(int nSize);
+
+			bool GetShowButton1();
+			void SetShowButton1(bool bShow);
+			LPCTSTR GetButton1NormalImage();
+			{
+				DECLARE_DUICONTROL(CScrollBarUI)
+			public:
+				CScrollBarUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+
+				CContainerUI* GetOwner() const;
+				void SetOwner(CContainerUI * pOwner);
+
+				void SetVisible(bool bVisible = true);
+				void SetEnabled(bool bEnable = true);
+				void SetFocus();
+
+				bool IsHorizontal();
+				void SetHorizontal(bool bHorizontal = true);
+				int GetScrollRange() const;
+				void SetScrollRange(int nRange);
+				int GetScrollPos() const;
+				void SetScrollPos(int nPos);
+				int GetLineSize() const;
+				void SetLineSize(int nSize);
+
+				bool GetShowButton1();
+				void SetShowButton1(bool bShow);
+				LPCTSTR GetButton1NormalImage();
+				{
+					DECLARE_DUICONTROL(CScrollBarUI)
+				public:
+					CScrollBarUI();
+
+					LPCTSTR GetClass() const;
+					LPVOID GetInterface(LPCTSTR pstrName);
+
+					CContainerUI* GetOwner() const;
+					void SetOwner(CContainerUI * pOwner);
+
+					void SetVisible(bool bVisible = true);
+					void SetEnabled(bool bEnable = true);
+					void SetFocus();
+
+					bool IsHorizontal();
+					void SetHorizontal(bool bHorizontal = true);
+					int GetScrollRange() const;
+					void SetScrollRange(int nRange);
+					int GetScrollPos() const;
+					void SetScrollPos(int nPos);
+					int GetLineSize() const;
+					void SetLineSize(int nSize);
+
+					bool GetShowButton1();
+					void SetShowButton1(bool bShow);
+					LPCTSTR GetButton1NormalImage();
+					{
+						DECLARE_DUICONTROL(CScrollBarUI)
+					public:
+						CScrollBarUI();
+
+						LPCTSTR GetClass() const;
+						LPVOID GetInterface(LPCTSTR pstrName);
+
+						CContainerUI* GetOwner() const;
+						void SetOwner(CContainerUI * pOwner);
+
+						void SetVisible(bool bVisible = true);
+						void SetEnabled(bool bEnable = true);
+						void SetFocus();
+
+						bool IsHorizontal();
+						void SetHorizontal(bool bHorizontal = true);
+						int GetScrollRange() const;
+						void SetScrollRange(int nRange);
+						int GetScrollPos() const;
+						void SetScrollPos(int nPos);
+						int GetLineSize() const;
+						void SetLineSize(int nSize);
+
+						bool GetShowButton1();
+						void SetShowButton1(bool bShow);
+						LPCTSTR GetButton1NormalImage();
 
 		LPCTSTR GetThumbNormalImage();
 		void SetThumbNormalImage(LPCTSTR pStrImage);

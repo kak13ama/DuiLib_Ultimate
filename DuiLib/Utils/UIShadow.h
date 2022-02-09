@@ -74,6 +74,36 @@ protected:
 
 	
 	static bool s_bHasInit;
+	namespace DuiLib
+	{
+
+		class UILIB_API CShadowUI
+		{
+		public:
+			friend class CPaintManagerUI;
+
+			CShadowUI(void);
+			virtual ~CShadowUI(void);
+
+		public:
+			// bShow为真时才会创建阴影
+			void ShowShadow(bool bShow);
+			bool IsShowShadow() const;
+
+			void DisableShadow(bool bDisable);
+			bool IsDisableShadow() const;
+
+			// 算法阴影的函数
+			bool SetSize(int NewSize = 0);
+			bool SetSharpness(unsigned int NewSharpness = 5);
+			bool SetDarkness(unsigned int NewDarkness = 200);
+			bool SetPosition(int NewXOffset = 5, int NewYOffset = 5);
+			bool SetColor(COLORREF NewColor = 0);
+
+			// 图片阴影的函数
+			bool SetImage(LPCTSTR szImage);
+			bool SetShadowCorner(RECT rcCorner);	// 九宫格方式描述阴影
+
 
 	CPaintManagerUI	*m_pManager;		// 父窗体的CPaintManagerUI，用来获取素材资源和父窗体句柄
 	HWND			 m_hWnd;			// 阴影窗体的句柄
@@ -106,5 +136,65 @@ protected:
 };
 
 }
+	namespace DuiLib
+	{
+
+		class UILIB_API CShadowUI
+		{
+		public:
+			friend class CPaintManagerUI;
+
+			CShadowUI(void);
+			virtual ~CShadowUI(void);
+
+		public:
+			// bShow为真时才会创建阴影
+			void ShowShadow(bool bShow);
+			bool IsShowShadow() const;
+
+			void DisableShadow(bool bDisable);
+			bool IsDisableShadow() const;
+
+			// 算法阴影的函数
+			bool SetSize(int NewSize = 0);
+			bool SetSharpness(unsigned int NewSharpness = 5);
+			bool SetDarkness(unsigned int NewDarkness = 200);
+			bool SetPosition(int NewXOffset = 5, int NewYOffset = 5);
+			bool SetColor(COLORREF NewColor = 0);
+
+			// 图片阴影的函数
+			bool SetImage(LPCTSTR szImage);
+			bool SetShadowCorner(RECT rcCorner);	// 九宫格方式描述阴影
+
+			namespace DuiLib
+			{
+
+				class UILIB_API CShadowUI
+				{
+				public:
+					friend class CPaintManagerUI;
+
+					CShadowUI(void);
+					virtual ~CShadowUI(void);
+
+				public:
+					// bShow为真时才会创建阴影
+					void ShowShadow(bool bShow);
+					bool IsShowShadow() const;
+
+					void DisableShadow(bool bDisable);
+					bool IsDisableShadow() const;
+
+					// 算法阴影的函数
+					bool SetSize(int NewSize = 0);
+					bool SetSharpness(unsigned int NewSharpness = 5);
+					bool SetDarkness(unsigned int NewDarkness = 200);
+					bool SetPosition(int NewXOffset = 5, int NewYOffset = 5);
+					bool SetColor(COLORREF NewColor = 0);
+
+					// 图片阴影的函数
+					bool SetImage(LPCTSTR szImage);
+					bool SetShadowCorner(RECT rcCorner);	// 九宫格方式描述阴影
+
 
 #endif //__UISHADOW_H__

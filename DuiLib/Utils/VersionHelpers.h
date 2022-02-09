@@ -59,6 +59,88 @@ namespace DuiLib
 	{
 		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 1);
 	}
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 1);
+	}
+
+	static BOOL IsWindowsVistaSP2OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 2);
+	}
+
+	static BOOL IsWindows7OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 0);
+	}
+
+	static BOOL IsWindows7SP1OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 1);
+	}
+
+	static BOOL IsWindows8OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN8), LOBYTE(_WIN32_WINNT_WIN8), 0);
+	}
+
+	static BOOL IsWindows8Point1OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINBLUE), LOBYTE(_WIN32_WINNT_WINBLUE), 0);
+	}
+
+	static BOOL IsWindowsThresholdOrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINTHRESHOLD), LOBYTE(_WIN32_WINNT_WINTHRESHOLD), 0);
+	}
+
+	static BOOL IsWindows10OrGreater()
+	{
+		return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINTHRESHOLD), LOBYTE(_WIN32_WINNT_WINTHRESHOLD), 0);
+	}
+
+	static BOOL IsWindowsServer()
+	{
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 1);
+		}
+
+		static BOOL IsWindowsVistaSP2OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 2);
+		}
+
+		static BOOL IsWindows7OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 0);
+		}
+
+		static BOOL IsWindows7SP1OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 1);
+		}
+
+		static BOOL IsWindows8OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN8), LOBYTE(_WIN32_WINNT_WIN8), 0);
+		}
+
+		static BOOL IsWindows8Point1OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINBLUE), LOBYTE(_WIN32_WINNT_WINBLUE), 0);
+		}
+
+		static BOOL IsWindowsThresholdOrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINTHRESHOLD), LOBYTE(_WIN32_WINNT_WINTHRESHOLD), 0);
+		}
+
+		static BOOL IsWindows10OrGreater()
+		{
+			return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WINTHRESHOLD), LOBYTE(_WIN32_WINNT_WINTHRESHOLD), 0);
+		}
+
+		static BOOL IsWindowsServer()
+		{
 
 	static BOOL IsWindowsVistaSP2OrGreater()
 	{

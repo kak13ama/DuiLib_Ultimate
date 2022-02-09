@@ -39,6 +39,44 @@ namespace DuiLib
 		SIZE m_szThumb;
 		UINT m_uButtonState;
 		int m_nStep;
+		{
+			DECLARE_DUICONTROL(CSliderUI)
+		public:
+			CSliderUI();
+
+			LPCTSTR GetClass() const;
+			UINT GetControlFlags() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+
+			void SetEnabled(bool bEnable = true);
+
+			int GetChangeStep();
+			void SetChangeStep(int step);
+			void SetThumbSize(SIZE szXY);
+			RECT GetThumbRect() const;
+			LPCTSTR GetThumbImage() const;
+			void SetThumbImage(LPCTSTR pStrImage);
+			LPCTSTR GetThumbHotImage() const;
+			void SetThumbHotImage(LPCTSTR pStrImage);
+			{
+				DECLARE_DUICONTROL(CSliderUI)
+			public:
+				CSliderUI();
+
+				LPCTSTR GetClass() const;
+				UINT GetControlFlags() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+
+				void SetEnabled(bool bEnable = true);
+
+				int GetChangeStep();
+				void SetChangeStep(int step);
+				void SetThumbSize(SIZE szXY);
+				RECT GetThumbRect() const;
+				LPCTSTR GetThumbImage() const;
+				void SetThumbImage(LPCTSTR pStrImage);
+				LPCTSTR GetThumbHotImage() const;
+				void SetThumbHotImage(LPCTSTR pStrImage);
 
 		CDuiString m_sThumbImage;
 		CDuiString m_sThumbHotImage;

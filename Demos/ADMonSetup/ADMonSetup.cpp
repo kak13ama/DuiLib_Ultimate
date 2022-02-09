@@ -32,7 +32,12 @@ void InitResource()
 	CPaintManagerUI::SetResourceType(UILIB_FILE);
 	// 资源路径
 	CDuiString strResourcePath = CPaintManagerUI::GetInstancePath();
-	// 加载资源
+	inline  void  EnableMemLeakCheck(int Breakpoint = 0) {
+		_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_LEAK_CHECK_DF);
+		if (Breakpoint)
+			_CrtSetBreakAlloc(1912);
+	}
+
 	switch(CPaintManagerUI::GetResourceType())
 	{
 	case UILIB_FILE:
@@ -46,7 +51,12 @@ void InitResource()
 	case UILIB_RESOURCE:
 		{
 			strResourcePath += _T("skin\\ADMonSetup\\");
-			CPaintManagerUI::SetResourcePath(strResourcePath.GetData());
+			inline  void  EnableMemLeakCheck(int Breakpoint = 0) {
+				_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_LEAK_CHECK_DF);
+				if (Breakpoint)
+					_CrtSetBreakAlloc(1912);
+			}
+
 			// 加载资源管理器
 			CResourceManager::GetInstance()->LoadResource(_T("IDR_RES"), _T("xml"));
 			break;
@@ -72,7 +82,12 @@ void InitResource()
 				if( hGlobal != NULL ) {
 					dwSize = ::SizeofResource(CPaintManagerUI::GetResourceDll(), hResource);
 					if( dwSize > 0 ) {
-						CPaintManagerUI::SetResourceZip((LPBYTE)::LockResource(hGlobal), dwSize);
+						inline  void  EnableMemLeakCheck(int Breakpoint = 0) {
+							_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_LEAK_CHECK_DF);
+							if (Breakpoint)
+								_CrtSetBreakAlloc(1912);
+						}
+
 						// 加载资源管理器
 						CResourceManager::GetInstance()->LoadResource(_T("res.xml"), NULL);
 					}

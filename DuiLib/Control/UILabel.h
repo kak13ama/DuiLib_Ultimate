@@ -28,6 +28,51 @@ namespace DuiLib
 		void SetTextPadding(RECT rc);
 		bool IsShowHtml();
 		void SetShowHtml(bool bShowHtml = true);
+		DECLARE_DUICONTROL(CLabelUI)
+	public:
+		CLabelUI();
+		~CLabelUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		UINT GetControlFlags() const;
+
+		DECLARE_DUICONTROL(CLabelUI)
+	public:
+		CLabelUI();
+		~CLabelUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		UINT GetControlFlags() const;
+
+		DECLARE_DUICONTROL(CLabelUI)
+	public:
+		CLabelUI();
+		~CLabelUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		UINT GetControlFlags() const;
+
+		DECLARE_DUICONTROL(CLabelUI)
+	public:
+		CLabelUI();
+		~CLabelUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		UINT GetControlFlags() const;
+
+		DECLARE_DUICONTROL(CLabelUI)
+	public:
+		CLabelUI();
+		~CLabelUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+		UINT GetControlFlags() const;
+
 
 		SIZE EstimateSize(SIZE szAvailable);
 		void DoEvent(TEventUI& event);

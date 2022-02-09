@@ -29,8 +29,37 @@ namespace DuiLib{
 	protected:
 		CHotKeyUI * m_pOwner;
 		HBRUSH m_hBkBrush;
-		bool m_bInit;
-	};
+
+		namespace DuiLib {
+			class CHotKeyUI;
+
+			class UILIB_API CHotKeyWnd : public CWindowWnd
+			{
+			public:
+				CHotKeyWnd(void);
+
+			public:
+
+				namespace DuiLib {
+					class CHotKeyUI;
+
+					class UILIB_API CHotKeyWnd : public CWindowWnd
+					{
+					public:
+						CHotKeyWnd(void);
+
+					public:
+
+						namespace DuiLib {
+							class CHotKeyUI;
+
+							class UILIB_API CHotKeyWnd : public CWindowWnd
+							{
+							public:
+								CHotKeyWnd(void);
+
+							public:
+							};
 
 	class UILIB_API CHotKeyUI : public CLabelUI
 	{

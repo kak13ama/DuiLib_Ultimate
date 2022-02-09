@@ -24,6 +24,24 @@ namespace DuiLib
 
 		void SetPos(RECT rc, bool bNeedInvalidate = true);
 		void DoPostPaint(HDC hDC, const RECT& rcPaint);
+		{
+			DECLARE_DUICONTROL(CVerticalLayoutUI)
+		public:
+			CVerticalLayoutUI();
+
+			LPCTSTR GetClass() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+			UINT GetControlFlags() const;
+
+			{
+				DECLARE_DUICONTROL(CVerticalLayoutUI)
+			public:
+				CVerticalLayoutUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+				UINT GetControlFlags() const;
+
 
 		RECT GetThumbRect(bool bUseNew = false) const;
 

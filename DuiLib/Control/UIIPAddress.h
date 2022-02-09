@@ -24,7 +24,47 @@ namespace DuiLib
 		void SetIP(DWORD dwIP);
 
 		void SetReadOnly(bool bReadOnly);
-		bool IsReadOnly() const;
+		bo
+			//给该控件添加一个属性dtstyle
+
+			namespace DuiLib
+		{
+			class CIPAddressWnd;
+
+			/// 时间选择控件
+
+//给该控件添加一个属性dtstyle
+
+			namespace DuiLib
+			{
+				class CIPAddressWnd;
+
+				/// 时间选择控件
+
+//给该控件添加一个属性dtstyle
+
+				namespace DuiLib
+				{
+					class CIPAddressWnd;
+
+					/// 时间选择控件
+
+//给该控件添加一个属性dtstyle
+
+					namespace DuiLib
+					{
+						class CIPAddressWnd;
+
+						/// 时间选择控件
+
+//给该控件添加一个属性dtstyle
+
+						namespace DuiLib
+						{
+							class CIPAddressWnd;
+
+							/// 时间选择控件
+							ol IsReadOnly() const;
 
 		void UpdateText();
 

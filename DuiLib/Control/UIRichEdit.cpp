@@ -12,38 +12,6 @@ namespace DuiLib {
 
 #define ID_RICH_UNDO			101
 #define ID_RICH_CUT				102
-#define ID_RICH_COPY			103
-#define ID_RICH_PASTE			104
-#define ID_RICH_CLEAR			105
-#define ID_RICH_SELECTALL		106
-#define ID_RICH_REDO			107
-
-	const LONG cInitTextMax = (32 * 1024) - 1;
-
-	EXTERN_C const IID IID_ITextServices = { // 8d33f740-cf58-11ce-a89d-00aa006cadc5
-		0x8d33f740,
-		0xcf58,
-		0x11ce,
-		{0xa8, 0x9d, 0x00, 0xaa, 0x00, 0x6c, 0xad, 0xc5}
-	};
-
-	EXTERN_C const IID IID_ITextHost = { /* c5bdd8d0-d26e-11ce-a89e-00aa006cadc5 */
-		0xc5bdd8d0,
-		0xd26e,
-		0x11ce,
-		{0xa8, 0x9e, 0x00, 0xaa, 0x00, 0x6c, 0xad, 0xc5}
-	};
-
-#ifndef LY_PER_INCH
-#define LY_PER_INCH 1440
-#endif
-
-#ifndef HIMETRIC_PER_INCH
-#define HIMETRIC_PER_INCH 2540
-#endif
-
-#include <textserv.h>
-
 	class CTxtWinHost : public ITextHost
 	{
 	public:

@@ -6,70 +6,7 @@ namespace DuiLib {
 #define RGBMAX   255    /* R,G, and B vary over 0-RGBMAX */
 #define HSLUNDEFINED (HSLMAX*2/3)
 
-	/*
-	* Convert hue value to RGB
-	*/
-	static float HueToRGB(float v1, float v2, float vH)
-	{
-		if (vH < 0.0f) vH += 1.0f;
-		if (vH > 1.0f) vH -= 1.0f;
-		if ((6.0f * vH) < 1.0f) return (v1 + (v2 - v1) * 6.0f * vH);
-		if ((2.0f * vH) < 1.0f) return (v2);
-		if ((3.0f * vH) < 2.0f) return (v1 + (v2 - v1) * ((2.0f / 3.0f) - vH) * 6.0f);
-		return (v1);
-	}
 
-	/*
-	* Convert color RGB to HSL
-	* pHue HSL hue value			[0 - 1]
-	* pSat HSL saturation value		[0 - 1]
-	* pLue HSL luminance value		[0 - 1]
-	*/
-
-	static void RGBToHSL(DWORD clr, float *pHue, float *pSat, float *pLue)
-	{
-		float R = (float)(GetRValue(clr) / 255.0f);  //RGB from 0 to 255
-		float G = (float)(GetGValue(clr) / 255.0f);
-		float B = (float)(GetBValue(clr) / 255.0f);
-
-		float H = 0, S = 0, L = 0;
-
-		float fMin = min(R, min(G, B));		//Min. value of RGB
-		float fMax = max(R, max(G, B));		//Max. value of RGB
-		float fDelta = fMax - fMin;				//Delta RGB value
-
-		L = (fMax + fMin) / 2.0f;
-
-		if (fDelta == 0)                     //This is a gray, no chroma...
-		{
-			H = 0.0f;                          //HSL results from 0 to 1
-			S = 0.0f;
-		}
-		else                                   //Chromatic data...
-		{
-			float del_R, del_G, del_B;
-
-			if (L < 0.5) S = fDelta / (fMax + fMin);
-			else           S = fDelta / (2.0f - fMax - fMin);
-
-			del_R = (((fMax - R) / 6.0f) + (fDelta / 2.0f)) / fDelta;
-			del_G = (((fMax - G) / 6.0f) + (fDelta / 2.0f)) / fDelta;
-			del_B = (((fMax - B) / 6.0f) + (fDelta / 2.0f)) / fDelta;
-
-			if (R == fMax) H = del_B - del_G;
-			else if (G == fMax) H = (1.0f / 3.0f) + del_R - del_B;
-			else if (B == fMax) H = (2.0f / 3.0f) + del_G - del_R;
-
-			if (H < 0.0f) H += 1.0f;
-			if (H > 1.0f)  H -= 1.0f;
-		}
-
-		*pHue = H;
-		*pSat = S;
-		*pLue = L;
-	}
-
-	/*
 	* Convert color HSL to RGB
 	* H HSL hue value				[0 - 1]
 	* S HSL saturation value		[0 - 1]

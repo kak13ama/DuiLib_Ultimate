@@ -35,6 +35,42 @@ namespace DuiLib
 		void	StopGif();
 
 	private:
+		CGifAnimUI(void);
+		~CGifAnimUI(void);
+
+		LPCTSTR	GetClass() const;
+		LPVOID	GetInterface(LPCTSTR pstrName);
+		void	DoInit();
+		bool	DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
+		void	DoEvent(TEventUI& event);
+		void	SetVisible(bool bVisible = true);
+		CGifAnimUI(void);
+		~CGifAnimUI(void);
+
+		LPCTSTR	GetClass() const;
+		LPVOID	GetInterface(LPCTSTR pstrName);
+		void	DoInit();
+		bool	DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
+		void	DoEvent(TEventUI& event);
+		void	SetVisible(bool bVisible = true);
+		CGifAnimUI(void);
+		~CGifAnimUI(void);
+
+		LPCTSTR	GetClass() const;
+		LPVOID	GetInterface(LPCTSTR pstrName);
+		void	DoInit();
+		bool	DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
+		void	DoEvent(TEventUI& event);
+		void	SetVisible(bool bVisible = true);
+		CGifAnimUI(void);
+		~CGifAnimUI(void);
+
+		LPCTSTR	GetClass() const;
+		LPVOID	GetInterface(LPCTSTR pstrName);
+		void	DoInit();
+		bool	DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl);
+		void	DoEvent(TEventUI& event);
+		void	SetVisible(bool bVisible = true);
 		void	InitGifImage();
 		void	DeleteGif();
 		void    OnTimer( UINT_PTR idEvent );

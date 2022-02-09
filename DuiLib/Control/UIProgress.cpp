@@ -8,43 +8,6 @@ namespace DuiLib
 	CProgressUI::CProgressUI() : m_bShowText(false), m_bHorizontal(true), m_nMin(0), m_nMax(100), m_nValue(0), m_bStretchForeImage(true)
 	{
 		m_uTextStyle = DT_SINGLELINE | DT_CENTER;
-		SetFixedHeight(12);
-	}
-
-	LPCTSTR CProgressUI::GetClass() const
-	{
-		return _T("ProgressUI");
-	}
-
-	LPVOID CProgressUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_PROGRESS) == 0 ) return static_cast<CProgressUI*>(this);
-		return CLabelUI::GetInterface(pstrName);
-	}
-	
-	bool CProgressUI::IsShowText()
-	{
-		return m_bShowText;
-	}
-
-	void CProgressUI::SetShowText(bool bShowText)
-	{
-		if( m_bShowText == bShowText ) return;
-		m_bShowText = bShowText;
-		if(!m_bShowText) SetText(_T(""));
-	}
-
-	bool CProgressUI::IsHorizontal()
-	{
-		return m_bHorizontal;
-	}
-
-	void CProgressUI::SetHorizontal(bool bHorizontal)
-	{
-		if( m_bHorizontal == bHorizontal ) return;
-
-		m_bHorizontal = bHorizontal;
-		Invalidate();
 	}
 
 	int CProgressUI::GetMinValue() const

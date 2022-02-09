@@ -34,6 +34,17 @@ public:
     virtual CDelegateBase* Copy() const { return new CDelegateStatic(*this); }
 
 protected:
+protected:
+    void* GetFn();
+    void* GetObject();
+    virtual bool Invoke(void* param) = 0;
+
+private:
+    void* m_pObject;
+    void* m_pFn;
+};
+
+
     virtual bool Invoke(void* param)
     {
         Fn pFn = (Fn)GetFn();
@@ -55,7 +66,18 @@ protected:
     {
         O* pObject = (O*) GetObject();
         return (pObject->*m_pFn)(param); 
-    }  
+    }
+protected:
+    void* GetFn();
+    void* GetObject();
+    virtual bool Invoke(void* param) = 0;
+
+private:
+    void* m_pObject;
+    void* m_pFn;
+};
+
+
 
 private:
     Fn m_pFn;
@@ -88,7 +110,29 @@ public:
 protected:
     CStdPtrArray m_aDelegates;
 };
+protected:
+    void* GetFn();
+    void* GetObject();
+    virtual bool Invoke(void* param) = 0;
+
+private:
+    void* m_pObject;
+    void* m_pFn;
+};
+
+
 
 } // namespace DuiLib
 
-#endif // __UIDELEGATE_H__
+#endif // 
+protected:
+    void* GetFn();
+    void* GetObject();
+    virtual bool Invoke(void* param) = 0;
+
+private:
+    void* m_pObject;
+    void* m_pFn;
+};
+
+__UIDELEGATE_H__

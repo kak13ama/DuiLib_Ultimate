@@ -48,7 +48,179 @@ namespace DuiLib {
 		CDuiString GetText() const;
 		void SetText(LPCTSTR pstrText);
 		bool IsModify() const;
-		void SetModify(bool bModified = true) const;
+		namespace DuiLib {
+
+			class CTxtWinHost;
+
+			class UILIB_API CRichEditUI : public CContainerUI, public IMessageFilterUI
+			{
+				DECLARE_DUICONTROL(CRichEditUI)
+			public:
+				CRichEditUI();
+				~CRichEditUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+				UINT GetControlFlags() const;
+
+				void SetEnabled(bool bEnabled);
+				bool IsMultiLine();
+				void SetMultiLine(bool bMultiLine);
+				bool IsWantTab();
+				void SetWantTab(bool bWantTab = true);
+				bool IsWantReturn();
+				void SetWantReturn(bool bWantReturn = true);
+				bool IsWantCtrlReturn();
+				void SetWantCtrlReturn(bool bWantCtrlReturn = true);
+				bool IsTransparent();
+				void SetTransparent(bool bTransparent = true);
+				bool IsRich();
+				void SetRich(bool bRich = true);
+				bool IsReadOnly();
+				void SetReadOnly(bool bReadOnly = true);
+				bool IsWordWrap();
+				void SetWordWrap(bool bWordWrap = true);
+				int GetFont();
+				void SetFont(int index);
+				void SetFont(LPCTSTR pStrFontName, int nSize, bool bBold, bool bUnderline, bool bItalic);
+				LONG GetWinStyle();
+				void SetWinStyle(LONG lStyle);
+				DWORD GetTextColor();
+				void SetTextColor(DWORD dwTextColor);
+				int GetLimitText();
+				void SetLimitText(int iChars);
+				long GetTextLength(DWORD dwFlags = GTL_DEFAULT) const;
+				CDuiString GetText() const;
+				namespace DuiLib {
+
+					class CTxtWinHost;
+
+					class UILIB_API CRichEditUI : public CContainerUI, public IMessageFilterUI
+					{
+						DECLARE_DUICONTROL(CRichEditUI)
+					public:
+						CRichEditUI();
+						~CRichEditUI();
+
+						LPCTSTR GetClass() const;
+						LPVOID GetInterface(LPCTSTR pstrName);
+						UINT GetControlFlags() const;
+
+						void SetEnabled(bool bEnabled);
+						bool IsMultiLine();
+						void SetMultiLine(bool bMultiLine);
+						bool IsWantTab();
+						void SetWantTab(bool bWantTab = true);
+						bool IsWantReturn();
+						void SetWantReturn(bool bWantReturn = true);
+						bool IsWantCtrlReturn();
+						void SetWantCtrlReturn(bool bWantCtrlReturn = true);
+						bool IsTransparent();
+						void SetTransparent(bool bTransparent = true);
+						bool IsRich();
+						void SetRich(bool bRich = true);
+						bool IsReadOnly();
+						void SetReadOnly(bool bReadOnly = true);
+						bool IsWordWrap();
+						void SetWordWrap(bool bWordWrap = true);
+						int GetFont();
+						void SetFont(int index);
+						void SetFont(LPCTSTR pStrFontName, int nSize, bool bBold, bool bUnderline, bool bItalic);
+						LONG GetWinStyle();
+						void SetWinStyle(LONG lStyle);
+						DWORD GetTextColor();
+						void SetTextColor(DWORD dwTextColor);
+						int GetLimitText();
+						void SetLimitText(int iChars);
+						long GetTextLength(DWORD dwFlags = GTL_DEFAULT) const;
+						CDuiString GetText() const;
+						namespace DuiLib {
+
+							class CTxtWinHost;
+
+							class UILIB_API CRichEditUI : public CContainerUI, public IMessageFilterUI
+							{
+								DECLARE_DUICONTROL(CRichEditUI)
+							public:
+								CRichEditUI();
+								~CRichEditUI();
+
+								LPCTSTR GetClass() const;
+								LPVOID GetInterface(LPCTSTR pstrName);
+								UINT GetControlFlags() const;
+
+								void SetEnabled(bool bEnabled);
+								bool IsMultiLine();
+								void SetMultiLine(bool bMultiLine);
+								bool IsWantTab();
+								void SetWantTab(bool bWantTab = true);
+								bool IsWantReturn();
+								void SetWantReturn(bool bWantReturn = true);
+								bool IsWantCtrlReturn();
+								void SetWantCtrlReturn(bool bWantCtrlReturn = true);
+								bool IsTransparent();
+								void SetTransparent(bool bTransparent = true);
+								bool IsRich();
+								void SetRich(bool bRich = true);
+								bool IsReadOnly();
+								void SetReadOnly(bool bReadOnly = true);
+								bool IsWordWrap();
+								void SetWordWrap(bool bWordWrap = true);
+								int GetFont();
+								void SetFont(int index);
+								void SetFont(LPCTSTR pStrFontName, int nSize, bool bBold, bool bUnderline, bool bItalic);
+								LONG GetWinStyle();
+								void SetWinStyle(LONG lStyle);
+								DWORD GetTextColor();
+								void SetTextColor(DWORD dwTextColor);
+								int GetLimitText();
+								void SetLimitText(int iChars);
+								long GetTextLength(DWORD dwFlags = GTL_DEFAULT) const;
+								CDuiString GetText() const;
+								namespace DuiLib {
+
+									class CTxtWinHost;
+
+									class UILIB_API CRichEditUI : public CContainerUI, public IMessageFilterUI
+									{
+										DECLARE_DUICONTROL(CRichEditUI)
+									public:
+										CRichEditUI();
+										~CRichEditUI();
+
+										LPCTSTR GetClass() const;
+										LPVOID GetInterface(LPCTSTR pstrName);
+										UINT GetControlFlags() const;
+
+										void SetEnabled(bool bEnabled);
+										bool IsMultiLine();
+										void SetMultiLine(bool bMultiLine);
+										bool IsWantTab();
+										void SetWantTab(bool bWantTab = true);
+										bool IsWantReturn();
+										void SetWantReturn(bool bWantReturn = true);
+										bool IsWantCtrlReturn();
+										void SetWantCtrlReturn(bool bWantCtrlReturn = true);
+										bool IsTransparent();
+										void SetTransparent(bool bTransparent = true);
+										bool IsRich();
+										void SetRich(bool bRich = true);
+										bool IsReadOnly();
+										void SetReadOnly(bool bReadOnly = true);
+										bool IsWordWrap();
+										void SetWordWrap(bool bWordWrap = true);
+										int GetFont();
+										void SetFont(int index);
+										void SetFont(LPCTSTR pStrFontName, int nSize, bool bBold, bool bUnderline, bool bItalic);
+										LONG GetWinStyle();
+										void SetWinStyle(LONG lStyle);
+										DWORD GetTextColor();
+										void SetTextColor(DWORD dwTextColor);
+										int GetLimitText();
+										void SetLimitText(int iChars);
+										long GetTextLength(DWORD dwFlags = GTL_DEFAULT) const;
+										CDuiString GetText() const;
+										void SetModify(bool bModified = true) const;
 		void GetSel(CHARRANGE &cr) const;
 		void GetSel(long& nStartChar, long& nEndChar) const;
 		int SetSel(CHARRANGE &cr);

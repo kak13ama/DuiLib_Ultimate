@@ -42,6 +42,81 @@ namespace DuiLib {
 		UIEVENT_RBUTTONUP,
 		UIEVENT_MBUTTONDOWN,
 		UIEVENT_MBUTTONUP,
+		class CControlUI;
+	class CRichEditUI;
+	class CIDropTarget;
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	enum UILIB_RESTYPE
+	{
+		UILIB_FILE = 1,		// 来自磁盘文件
+		UILIB_ZIP,			// 来自磁盘zip压缩包
+		UILIB_RESOURCE,		// 来自资源
+		UILIB_ZIPRESOURCE,	// 来自资源的zip压缩包
+	};
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+
+	typedef enum EVENTTYPE_UI
+	{
+		UIEVENT__FIRST = 1,
+		UIEVENT__KEYBEGIN,
+		UIEVENT_KEYDOWN,
+		UIEVENT_KEYUP,
+		UIEVENT_CHAR,
+		UIEVENT_SYSKEY,
+		UIEVENT__KEYEND,
+		class CControlUI;
+	class CRichEditUI;
+	class CIDropTarget;
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	enum UILIB_RESTYPE
+	{
+		UILIB_FILE = 1,		// 来自磁盘文件
+		UILIB_ZIP,			// 来自磁盘zip压缩包
+		UILIB_RESOURCE,		// 来自资源
+		UILIB_ZIPRESOURCE,	// 来自资源的zip压缩包
+	};
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+
+	typedef enum EVENTTYPE_UI
+	{
+		UIEVENT__FIRST = 1,
+		UIEVENT__KEYBEGIN,
+		UIEVENT_KEYDOWN,
+		UIEVENT_KEYUP,
+		UIEVENT_CHAR,
+		UIEVENT_SYSKEY,
+		UIEVENT__KEYEND,
+		class CControlUI;
+	class CRichEditUI;
+	class CIDropTarget;
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+	enum UILIB_RESTYPE
+	{
+		UILIB_FILE = 1,		// 来自磁盘文件
+		UILIB_ZIP,			// 来自磁盘zip压缩包
+		UILIB_RESOURCE,		// 来自资源
+		UILIB_ZIPRESOURCE,	// 来自资源的zip压缩包
+	};
+	/////////////////////////////////////////////////////////////////////////////////////
+	//
+
+	typedef enum EVENTTYPE_UI
+	{
+		UIEVENT__FIRST = 1,
+		UIEVENT__KEYBEGIN,
+		UIEVENT_KEYDOWN,
+		UIEVENT_KEYUP,
+		UIEVENT_CHAR,
+		UIEVENT_SYSKEY,
+		UIEVENT__KEYEND,
 		UIEVENT_DBLCLICK,
 		UIEVENT_CONTEXTMENU,
 		UIEVENT_SCROLLWHEEL,

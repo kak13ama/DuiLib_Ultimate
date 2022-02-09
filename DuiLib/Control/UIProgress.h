@@ -24,7 +24,55 @@ namespace DuiLib
 		void SetMinValue(int nMin);
 		int GetMaxValue() const;
 		void SetMaxValue(int nMax);
-		int GetValue() const;
+		{
+			class UILIB_API CProgressUI : public CLabelUI
+			{
+				DECLARE_DUICONTROL(CProgressUI)
+			public:
+				CProgressUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+
+				bool IsShowText();
+				void SetShowText(bool bShowText = true);
+				{
+					class UILIB_API CProgressUI : public CLabelUI
+					{
+						DECLARE_DUICONTROL(CProgressUI)
+					public:
+						CProgressUI();
+
+						LPCTSTR GetClass() const;
+						LPVOID GetInterface(LPCTSTR pstrName);
+
+						bool IsShowText();
+						void SetShowText(bool bShowText = true);
+						{
+							class UILIB_API CProgressUI : public CLabelUI
+							{
+								DECLARE_DUICONTROL(CProgressUI)
+							public:
+								CProgressUI();
+
+								LPCTSTR GetClass() const;
+								LPVOID GetInterface(LPCTSTR pstrName);
+
+								bool IsShowText();
+								void SetShowText(bool bShowText = true);
+								{
+									class UILIB_API CProgressUI : public CLabelUI
+									{
+										DECLARE_DUICONTROL(CProgressUI)
+									public:
+										CProgressUI();
+
+										LPCTSTR GetClass() const;
+										LPVOID GetInterface(LPCTSTR pstrName);
+
+										bool IsShowText();
+										void SetShowText(bool bShowText = true);
+										int GetValue() const;
 		void SetValue(int nValue);
 		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 		void PaintForeColor(HDC hDC);

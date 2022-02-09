@@ -29,7 +29,52 @@ namespace DuiLib
 		virtual void DoEvent(TEventUI& event);
 	public:
 		void StartAnim();
-		void StopAnim();
+		**#define USE_XIMAGE_EFFECT
+			* *#include "UIlib.h"
+			* /
+#ifdef USE_XIMAGE_EFFECT
+			namespace DuiLib
+		{
+			class CLabelUI;
+
+			class UILIB_API CGifAnimExUI : public CLabelUI
+				* *#define USE_XIMAGE_EFFECT
+				* *#include "UIlib.h"
+				* /
+#ifdef USE_XIMAGE_EFFECT
+				namespace DuiLib
+			{
+				class CLabelUI;
+
+				class UILIB_API CGifAnimExUI : public CLabelUI
+					* *#define USE_XIMAGE_EFFECT
+					* *#include "UIlib.h"
+					* /
+#ifdef USE_XIMAGE_EFFECT
+					namespace DuiLib
+				{
+					class CLabelUI;
+
+					class UILIB_API CGifAnimExUI : public CLabelUI
+						* *#define USE_XIMAGE_EFFECT
+						* *#include "UIlib.h"
+						* /
+#ifdef USE_XIMAGE_EFFECT
+						namespace DuiLib
+					{
+						class CLabelUI;
+
+						class UILIB_API CGifAnimExUI : public CLabelUI
+							* *#define USE_XIMAGE_EFFECT
+							* *#include "UIlib.h"
+							* /
+#ifdef USE_XIMAGE_EFFECT
+							namespace DuiLib
+						{
+							class CLabelUI;
+
+							class UILIB_API CGifAnimExUI : public CLabelUI
+								void StopAnim();
 	protected:
 		struct Imp;
 		Imp* m_pImp;

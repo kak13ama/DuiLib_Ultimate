@@ -31,6 +31,82 @@ namespace DuiLib {
 	public: 
 		virtual void DoEvent(TEventUI& event);
 
+#include "Layout/UIVerticalLayout.h"
+#include "Layout/UIHorizontalLayout.h"
+
+		namespace DuiLib {
+
+			class IListComboCallbackUI
+			{
+			public:
+				virtual void GetItemComboTextArray(CControlUI* pCtrl, int iItem, int iSubItem) = 0;
+			};
+
+			class CEditUI;
+			class CComboBoxUI;
+
+			class UILIB_API CListExUI : public CListUI, public INotifyUI
+			{
+				DECLARE_DUICONTROL(CListExUI)
+
+
+#include "Layout/UIVerticalLayout.h"
+#include "Layout/UIHorizontalLayout.h"
+
+				namespace DuiLib {
+
+					class IListComboCallbackUI
+					{
+					public:
+						virtual void GetItemComboTextArray(CControlUI* pCtrl, int iItem, int iSubItem) = 0;
+					};
+
+					class CEditUI;
+					class CComboBoxUI;
+
+					class UILIB_API CListExUI : public CListUI, public INotifyUI
+					{
+						DECLARE_DUICONTROL(CListExUI)
+
+
+#include "Layout/UIVerticalLayout.h"
+#include "Layout/UIHorizontalLayout.h"
+
+						namespace DuiLib {
+
+							class IListComboCallbackUI
+							{
+							public:
+								virtual void GetItemComboTextArray(CControlUI* pCtrl, int iItem, int iSubItem) = 0;
+							};
+
+							class CEditUI;
+							class CComboBoxUI;
+
+							class UILIB_API CListExUI : public CListUI, public INotifyUI
+							{
+								DECLARE_DUICONTROL(CListExUI)
+
+
+#include "Layout/UIVerticalLayout.h"
+#include "Layout/UIHorizontalLayout.h"
+
+								namespace DuiLib {
+
+									class IListComboCallbackUI
+									{
+									public:
+										virtual void GetItemComboTextArray(CControlUI* pCtrl, int iItem, int iSubItem) = 0;
+									};
+
+									class CEditUI;
+									class CComboBoxUI;
+
+									class UILIB_API CListExUI : public CListUI, public INotifyUI
+									{
+										DECLARE_DUICONTROL(CListExUI)
+
+
 	public:
 		void InitListCtrl();
 

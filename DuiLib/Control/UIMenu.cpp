@@ -11,61 +11,6 @@ namespace DuiLib {
 		CMenuUI::CMenuUI():
 		m_pWindow(NULL)
 	{
-		if (GetHeader() != NULL)
-			GetHeader()->SetVisible(false);
-	}
-
-	CMenuUI::~CMenuUI()
-	{
-
-	}
-
-	LPCTSTR CMenuUI::GetClass() const
-	{
-		return _T("MenuUI");
-	}
-
-	LPVOID CMenuUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, _T("Menu")) == 0 ) return static_cast<CMenuUI*>(this);
-		return CListUI::GetInterface(pstrName);
-	}
-
-	UINT CMenuUI::GetListType()
-	{
-		return LT_MENU;
-	}
-
-	void CMenuUI::DoEvent(TEventUI& event)
-	{
-		return __super::DoEvent(event);
-	}
-
-	bool CMenuUI::Add(CControlUI* pControl)
-	{
-		CMenuElementUI* pMenuItem = static_cast<CMenuElementUI*>(pControl->GetInterface(_T("MenuElement")));
-		if (pMenuItem == NULL)
-			return false;
-
-		for (int i = 0; i < pMenuItem->GetCount(); ++i)
-		{
-			if (pMenuItem->GetItemAt(i)->GetInterface(_T("MenuElement")) != NULL)
-			{
-				(static_cast<CMenuElementUI*>(pMenuItem->GetItemAt(i)->GetInterface(_T("MenuElement"))))->SetInternVisible(false);
-			}
-		}
-		return CListUI::Add(pControl);
-	}
-
-	bool CMenuUI::AddAt(CControlUI* pControl, int iIndex)
-	{
-		CMenuElementUI* pMenuItem = static_cast<CMenuElementUI*>(pControl->GetInterface(_T("MenuElement")));
-		if (pMenuItem == NULL)
-			return false;
-
-		for (int i = 0; i < pMenuItem->GetCount(); ++i)
-		{
-			if (pMenuItem->GetItemAt(i)->GetInterface(_T("MenuElement")) != NULL)
 			{
 				(static_cast<CMenuElementUI*>(pMenuItem->GetItemAt(i)->GetInterface(_T("MenuElement"))))->SetInternVisible(false);
 			}

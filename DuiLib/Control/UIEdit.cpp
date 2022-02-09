@@ -9,40 +9,6 @@ namespace DuiLib
 		CEditWnd();
 
 		void Init(CEditUI* pOwner);
-		RECT CalPos();
-
-		LPCTSTR GetWindowClassName() const;
-		LPCTSTR GetSuperClassName() const;
-		void OnFinalMessage(HWND hWnd);
-
-		LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
-		LRESULT OnKillFocus(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
-		LRESULT OnEditChanged(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
-
-	protected:
-		enum { 
-			DEFAULT_TIMERID = 20,
-		};
-
-		CEditUI* m_pOwner;
-		HBRUSH m_hBkBrush;
-		bool m_bInit;
-		bool m_bDrawCaret;
-	};
-
-
-	CEditWnd::CEditWnd() : m_pOwner(NULL), m_hBkBrush(NULL), m_bInit(false), m_bDrawCaret(false)
-	{
-	}
-
-	void CEditWnd::Init(CEditUI* pOwner)
-	{
-		m_pOwner = pOwner;
-		RECT rcPos = CalPos();
-		UINT uStyle = 0;
-		if(m_pOwner->GetManager()->IsLayered()) {
-			uStyle = WS_POPUP | ES_AUTOHSCROLL | WS_VISIBLE;
-			RECT rcWnd={0};
 			::GetWindowRect(m_pOwner->GetManager()->GetPaintWindow(), &rcWnd);
 			rcPos.left += rcWnd.left;
 			rcPos.right += rcWnd.left;

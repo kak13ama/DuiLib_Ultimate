@@ -48,6 +48,146 @@ enum MenuItemDefaultInfo
 	ITEM_DEFAULT_EXPLAND_ICON_WIDTH = 20,	//默认下级菜单扩展图标所占宽度
 	ITEM_DEFAULT_EXPLAND_ICON_SIZE = 9,		//默认下级菜单扩展图标的大小
 
+#include "../Utils/observer_impl_base.h"
+
+	namespace DuiLib {
+
+	struct ContextMenuParam
+	{
+		// 1: remove all
+		// 2: remove the sub menu
+		WPARAM wParam;
+		HWND hWnd;
+	};
+
+	struct MenuItemInfo
+	{
+		TCHAR szName[256];
+		bool bChecked;
+	};
+	struct MenuCmd
+	{
+		TCHAR szName[256];
+		TCHAR szUserData[1024];
+		TCHAR szText[1024];
+		BOOL bChecked;
+	};
+
+	enum MenuAlignment
+	{
+		eMenuAlignment_Left = 1 << 1,
+		eMenuAlignment_Top = 1 << 2,
+		eMenuAlignment_Right = 1 << 3,
+		eMenuAlignment_Bottom = 1 << 4,
+	};
+
+
+
+#include "../Utils/observer_impl_base.h"
+
+	namespace DuiLib {
+
+		struct ContextMenuParam
+		{
+			// 1: remove all
+			// 2: remove the sub menu
+			WPARAM wParam;
+			HWND hWnd;
+		};
+
+		struct MenuItemInfo
+		{
+			TCHAR szName[256];
+			bool bChecked;
+		};
+		struct MenuCmd
+		{
+			TCHAR szName[256];
+			TCHAR szUserData[1024];
+			TCHAR szText[1024];
+			BOOL bChecked;
+		};
+
+		enum MenuAlignment
+		{
+			eMenuAlignment_Left = 1 << 1,
+			eMenuAlignment_Top = 1 << 2,
+			eMenuAlignment_Right = 1 << 3,
+			eMenuAlignment_Bottom = 1 << 4,
+		};
+
+
+
+#include "../Utils/observer_impl_base.h"
+
+		namespace DuiLib {
+
+			struct ContextMenuParam
+			{
+				// 1: remove all
+				// 2: remove the sub menu
+				WPARAM wParam;
+				HWND hWnd;
+			};
+
+			struct MenuItemInfo
+			{
+				TCHAR szName[256];
+				bool bChecked;
+			};
+			struct MenuCmd
+			{
+				TCHAR szName[256];
+				TCHAR szUserData[1024];
+				TCHAR szText[1024];
+				BOOL bChecked;
+			};
+
+			enum MenuAlignment
+			{
+				eMenuAlignment_Left = 1 << 1,
+				eMenuAlignment_Top = 1 << 2,
+				eMenuAlignment_Right = 1 << 3,
+				eMenuAlignment_Bottom = 1 << 4,
+			};
+
+
+
+#include "../Utils/observer_impl_base.h"
+
+			namespace DuiLib {
+
+				struct ContextMenuParam
+				{
+					// 1: remove all
+					// 2: remove the sub menu
+					WPARAM wParam;
+					HWND hWnd;
+				};
+
+				struct MenuItemInfo
+				{
+					TCHAR szName[256];
+					bool bChecked;
+				};
+				struct MenuCmd
+				{
+					TCHAR szName[256];
+					TCHAR szUserData[1024];
+					TCHAR szText[1024];
+					BOOL bChecked;
+				};
+
+				enum MenuAlignment
+				{
+					eMenuAlignment_Left = 1 << 1,
+					eMenuAlignment_Top = 1 << 2,
+					eMenuAlignment_Right = 1 << 3,
+					eMenuAlignment_Bottom = 1 << 4,
+				};
+
+
+
 	DEFAULT_LINE_LEFT_INSET = ITEM_DEFAULT_ICON_WIDTH + 3,	//默认分隔线的左边距
 	DEFAULT_LINE_RIGHT_INSET = 7,	//默认分隔线的右边距
 	DEFAULT_LINE_HEIGHT = 6,		//默认分隔线所占高度

@@ -27,3 +27,47 @@ namespace DuiLib
 }
 
 #endif // __UICOMBOBOX_H__
+	public:
+		CComboBoxUI();
+		LPCTSTR GetClass() const;
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintText(HDC hDC);
+		void PaintStatusImage(HDC hDC);
+
+	protected:
+		CDuiString m_sArrowImage;
+	public:
+		CComboBoxUI();
+		LPCTSTR GetClass() const;
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintText(HDC hDC);
+		void PaintStatusImage(HDC hDC);
+
+	protected:
+		CDuiString m_sArrowImage;
+	public:
+		CComboBoxUI();
+		LPCTSTR GetClass() const;
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintText(HDC hDC);
+		void PaintStatusImage(HDC hDC);
+
+	protected:
+		CDuiString m_sArrowImage;
+	public:
+		CComboBoxUI();
+		LPCTSTR GetClass() const;
+
+		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+		void PaintText(HDC hDC);
+		void PaintStatusImage(HDC hDC);
+
+	protected:
+		CDuiString m_sArrowImage;

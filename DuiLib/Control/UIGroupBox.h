@@ -37,4 +37,48 @@ namespace DuiLib
 		UINT m_uTextStyle;
 	};
 }
-#endif // __UIGROUPBOX_H__
+#e	protected:
+	//Paint
+	virtual void PaintText(HDC hDC);
+	virtual void PaintBorder(HDC hDC);
+	virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+			protected:
+				//Paint
+				virtual void PaintText(HDC hDC);
+				virtual void PaintBorder(HDC hDC);
+				virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+			protected:
+				//Paint
+				virtual void PaintText(HDC hDC);
+				virtual void PaintBorder(HDC hDC);
+				virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+			protected:
+				//Paint
+				virtual void PaintText(HDC hDC);
+				virtual void PaintBorder(HDC hDC);
+				virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
+
+	private:
+		SIZE CalcrectSize(SIZE szAvailable);
+
+	protected:
+		DWORD m_dwTextColor;
+		ndif // __UIGROUPBOX_H__

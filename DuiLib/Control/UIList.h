@@ -30,7 +30,75 @@ namespace DuiLib {
 		CDuiString sHotImage;
 		DWORD dwDisabledTextColor;
 		DWORD dwDisabledBkColor;
-		CDuiString sDisabledImage;
+		typedef int (CALLBACK* PULVCompareFunc)(UINT_PTR, UINT_PTR, UINT_PTR);
+
+		class CListHeaderUI;
+
+#define UILIST_MAX_COLUMNS 32
+
+		typedef struct tagTListInfoUI
+		{
+			int nColumns;
+			RECT rcColumn[UILIST_MAX_COLUMNS];
+			int nFont;
+			UINT uTextStyle;
+			RECT rcTextPadding;
+			DWORD dwTextColor;
+			DWORD dwBkColor;
+			CDuiString sBkImage;
+			bool bAlternateBk;
+			typedef int (CALLBACK* PULVCompareFunc)(UINT_PTR, UINT_PTR, UINT_PTR);
+
+			class CListHeaderUI;
+
+#define UILIST_MAX_COLUMNS 32
+
+			typedef struct tagTListInfoUI
+			{
+				int nColumns;
+				RECT rcColumn[UILIST_MAX_COLUMNS];
+				int nFont;
+				UINT uTextStyle;
+				RECT rcTextPadding;
+				DWORD dwTextColor;
+				DWORD dwBkColor;
+				CDuiString sBkImage;
+				bool bAlternateBk;
+				typedef int (CALLBACK* PULVCompareFunc)(UINT_PTR, UINT_PTR, UINT_PTR);
+
+				class CListHeaderUI;
+
+#define UILIST_MAX_COLUMNS 32
+
+				typedef struct tagTListInfoUI
+				{
+					int nColumns;
+					RECT rcColumn[UILIST_MAX_COLUMNS];
+					int nFont;
+					UINT uTextStyle;
+					RECT rcTextPadding;
+					DWORD dwTextColor;
+					DWORD dwBkColor;
+					CDuiString sBkImage;
+					bool bAlternateBk;
+					typedef int (CALLBACK* PULVCompareFunc)(UINT_PTR, UINT_PTR, UINT_PTR);
+
+					class CListHeaderUI;
+
+#define UILIST_MAX_COLUMNS 32
+
+					typedef struct tagTListInfoUI
+					{
+						int nColumns;
+						RECT rcColumn[UILIST_MAX_COLUMNS];
+						int nFont;
+						UINT uTextStyle;
+						RECT rcTextPadding;
+						DWORD dwTextColor;
+						DWORD dwBkColor;
+						CDuiString sBkImage;
+						bool bAlternateBk;
+						CDuiString sDisabledImage;
 		DWORD dwLineColor;
 		bool bShowRowLine;
 		bool bShowColumnLine;

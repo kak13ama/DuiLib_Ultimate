@@ -43,7 +43,64 @@ public:
 	virtual void AddReceiver(ReceiverImplBase<ReturnT, ParamT>* receiver)
 	{
 		if (receiver == NULL)
-			return;
+			return;	virtual ReturnT Notify(ParamT param) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImplBase
+	{
+	public:
+		virtual void AddObserver(ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+		virtual void RemoveObserver() = 0;
+		virtual ReturnT Receive(ParamT param) = 0;
+		virtual ReturnT Respond(ParamT param, ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImpl;
+
+	template <typename ReturnT, typename ParamT>
+	class ObserverImpl : public ObserverImplBase<ReturnT, ParamT>
+	{
+		virtual ReturnT Notify(ParamT param) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImplBase
+	{
+	public:
+		virtual void AddObserver(ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+		virtual void RemoveObserver() = 0;
+		virtual ReturnT Receive(ParamT param) = 0;
+		virtual ReturnT Respond(ParamT param, ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImpl;
+
+	template <typename ReturnT, typename ParamT>
+	class ObserverImpl : public ObserverImplBase<ReturnT, ParamT>
+	{
+		virtual ReturnT Notify(ParamT param) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImplBase
+	{
+	public:
+		virtual void AddObserver(ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+		virtual void RemoveObserver() = 0;
+		virtual ReturnT Receive(ParamT param) = 0;
+		virtual ReturnT Respond(ParamT param, ObserverImplBase<ReturnT, ParamT>* observer) = 0;
+	};
+
+	template <typename ReturnT, typename ParamT>
+	class ReceiverImpl;
+
+	template <typename ReturnT, typename ParamT>
+	class ObserverImpl : public ObserverImplBase<ReturnT, ParamT>
+	{
+
 
 		receivers_[count_] = receiver;
 		receiver->AddObserver(this);

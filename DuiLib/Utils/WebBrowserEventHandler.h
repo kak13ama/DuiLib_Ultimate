@@ -121,6 +121,237 @@ namespace DuiLib
 		{
 			return S_OK;
 		}
+		class CWebBrowserUI;
+		class CWebBrowserEventHandler
+		{
+		public:
+			CWebBrowserEventHandler() {}
+			~CWebBrowserEventHandler() {}
+
+			virtual void BeforeNavigate2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& Flags, VARIANT*& TargetFrameName, VARIANT*& PostData, VARIANT*& Headers, VARIANT_BOOL*& Cancel) {}
+			virtual void NavigateError(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& TargetFrameName, VARIANT*& StatusCode, VARIANT_BOOL*& Cancel) {}
+			virtual void NavigateComplete2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+			virtual void ProgressChange(CWebBrowserUI* pWeb, LONG nProgress, LONG nProgressMax) {}
+			virtual void NewWindow3(CWebBrowserUI* pWeb, IDispatch** pDisp, VARIANT_BOOL*& Cancel, DWORD dwFlags, BSTR bstrUrlContext, BSTR bstrUrl) {}
+			virtual void CommandStateChange(CWebBrowserUI* pWeb, long Command, VARIANT_BOOL Enable) {};
+			virtual void TitleChange(CWebBrowserUI* pWeb, BSTR bstrTitle) {};
+			virtual void DocumentComplete(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+
+			// interface IDocHostUIHandler
+			virtual HRESULT STDMETHODCALLTYPE ShowContextMenu(CWebBrowserUI* pWeb,
+				/* [in] */ DWORD dwID,
+				/* [in] */ POINT __RPC_FAR* ppt,
+				/* [in] */ IUnknown __RPC_FAR* pcmdtReserved,
+				/* [in] */ IDispatch __RPC_FAR* pdispReserved)
+			{
+				//return E_NOTIMPL;
+				//返回 E_NOTIMPL 正常弹出系统右键菜单
+				return S_OK;
+				//返回S_OK 则可屏蔽系统右键菜单
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE GetHostInfo(CWebBrowserUI* pWeb,
+				/* [out][in] */ DOCHOSTUIINFO __RPC_FAR* pInfo)
+			{
+				return E_NOTIMPL;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE ShowUI(CWebBrowserUI* pWeb,
+				/* [in] */ DWORD dwID,
+				/* [in] */ IOleInPlaceActiveObject __RPC_FAR* pActiveObject,
+				/* [in] */ IOleCommandTarget __RPC_FAR* pCommandTarget,
+				/* [in] */ IOleInPlaceFrame __RPC_FAR* pFrame,
+				/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pDoc)
+			{
+				return S_FALSE;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE HideUI(CWebBrowserUI* pWeb)
+			{
+				return S_OK;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE UpdateUI(CWebBrowserUI* pWeb)
+			{
+				return S_OK;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE EnableModeless(CWebBrowserUI* pWeb,
+				/* [in] */ BOOL fEnable)
+			{
+				return S_OK;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE OnDocWindowActivate(CWebBrowserUI* pWeb,
+				/* [in] */ BOOL fActivate)
+			{
+				return S_OK;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE OnFrameWindowActivate(CWebBrowserUI* pWeb,
+				/* [in] */ BOOL fActivate)
+			{
+				return S_OK;
+			}
+
+			virtual HRESULT STDMETHODCALLTYPE ResizeBorder(CWebBrowserUI* pWeb,
+				/* [in] */ LPCRECT prcBorder,
+				/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pUIWindow,
+				/* [in] */ BOOL fRameWindow)
+				class CWebBrowserUI;
+			class CWebBrowserEventHandler
+			{
+			public:
+				CWebBrowserEventHandler() {}
+				~CWebBrowserEventHandler() {}
+
+				virtual void BeforeNavigate2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& Flags, VARIANT*& TargetFrameName, VARIANT*& PostData, VARIANT*& Headers, VARIANT_BOOL*& Cancel) {}
+				virtual void NavigateError(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& TargetFrameName, VARIANT*& StatusCode, VARIANT_BOOL*& Cancel) {}
+				virtual void NavigateComplete2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+				virtual void ProgressChange(CWebBrowserUI* pWeb, LONG nProgress, LONG nProgressMax) {}
+				virtual void NewWindow3(CWebBrowserUI* pWeb, IDispatch** pDisp, VARIANT_BOOL*& Cancel, DWORD dwFlags, BSTR bstrUrlContext, BSTR bstrUrl) {}
+				virtual void CommandStateChange(CWebBrowserUI* pWeb, long Command, VARIANT_BOOL Enable) {};
+				virtual void TitleChange(CWebBrowserUI* pWeb, BSTR bstrTitle) {};
+				virtual void DocumentComplete(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+
+				// interface IDocHostUIHandler
+				virtual HRESULT STDMETHODCALLTYPE ShowContextMenu(CWebBrowserUI* pWeb,
+					/* [in] */ DWORD dwID,
+					/* [in] */ POINT __RPC_FAR* ppt,
+					/* [in] */ IUnknown __RPC_FAR* pcmdtReserved,
+					/* [in] */ IDispatch __RPC_FAR* pdispReserved)
+				{
+					//return E_NOTIMPL;
+					//返回 E_NOTIMPL 正常弹出系统右键菜单
+					return S_OK;
+					//返回S_OK 则可屏蔽系统右键菜单
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE GetHostInfo(CWebBrowserUI* pWeb,
+					/* [out][in] */ DOCHOSTUIINFO __RPC_FAR* pInfo)
+				{
+					return E_NOTIMPL;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE ShowUI(CWebBrowserUI* pWeb,
+					/* [in] */ DWORD dwID,
+					/* [in] */ IOleInPlaceActiveObject __RPC_FAR* pActiveObject,
+					/* [in] */ IOleCommandTarget __RPC_FAR* pCommandTarget,
+					/* [in] */ IOleInPlaceFrame __RPC_FAR* pFrame,
+					/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pDoc)
+				{
+					return S_FALSE;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE HideUI(CWebBrowserUI* pWeb)
+				{
+					return S_OK;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE UpdateUI(CWebBrowserUI* pWeb)
+				{
+					return S_OK;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE EnableModeless(CWebBrowserUI* pWeb,
+					/* [in] */ BOOL fEnable)
+				{
+					return S_OK;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE OnDocWindowActivate(CWebBrowserUI* pWeb,
+					/* [in] */ BOOL fActivate)
+				{
+					return S_OK;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE OnFrameWindowActivate(CWebBrowserUI* pWeb,
+					/* [in] */ BOOL fActivate)
+				{
+					return S_OK;
+				}
+
+				virtual HRESULT STDMETHODCALLTYPE ResizeBorder(CWebBrowserUI* pWeb,
+					/* [in] */ LPCRECT prcBorder,
+					/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pUIWindow,
+					/* [in] */ BOOL fRameWindow)
+					class CWebBrowserUI;
+				class CWebBrowserEventHandler
+				{
+				public:
+					CWebBrowserEventHandler() {}
+					~CWebBrowserEventHandler() {}
+
+					virtual void BeforeNavigate2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& Flags, VARIANT*& TargetFrameName, VARIANT*& PostData, VARIANT*& Headers, VARIANT_BOOL*& Cancel) {}
+					virtual void NavigateError(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url, VARIANT*& TargetFrameName, VARIANT*& StatusCode, VARIANT_BOOL*& Cancel) {}
+					virtual void NavigateComplete2(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+					virtual void ProgressChange(CWebBrowserUI* pWeb, LONG nProgress, LONG nProgressMax) {}
+					virtual void NewWindow3(CWebBrowserUI* pWeb, IDispatch** pDisp, VARIANT_BOOL*& Cancel, DWORD dwFlags, BSTR bstrUrlContext, BSTR bstrUrl) {}
+					virtual void CommandStateChange(CWebBrowserUI* pWeb, long Command, VARIANT_BOOL Enable) {};
+					virtual void TitleChange(CWebBrowserUI* pWeb, BSTR bstrTitle) {};
+					virtual void DocumentComplete(CWebBrowserUI* pWeb, IDispatch* pDisp, VARIANT*& url) {}
+
+					// interface IDocHostUIHandler
+					virtual HRESULT STDMETHODCALLTYPE ShowContextMenu(CWebBrowserUI* pWeb,
+						/* [in] */ DWORD dwID,
+						/* [in] */ POINT __RPC_FAR* ppt,
+						/* [in] */ IUnknown __RPC_FAR* pcmdtReserved,
+						/* [in] */ IDispatch __RPC_FAR* pdispReserved)
+					{
+						//return E_NOTIMPL;
+						//返回 E_NOTIMPL 正常弹出系统右键菜单
+						return S_OK;
+						//返回S_OK 则可屏蔽系统右键菜单
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE GetHostInfo(CWebBrowserUI* pWeb,
+						/* [out][in] */ DOCHOSTUIINFO __RPC_FAR* pInfo)
+					{
+						return E_NOTIMPL;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE ShowUI(CWebBrowserUI* pWeb,
+						/* [in] */ DWORD dwID,
+						/* [in] */ IOleInPlaceActiveObject __RPC_FAR* pActiveObject,
+						/* [in] */ IOleCommandTarget __RPC_FAR* pCommandTarget,
+						/* [in] */ IOleInPlaceFrame __RPC_FAR* pFrame,
+						/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pDoc)
+					{
+						return S_FALSE;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE HideUI(CWebBrowserUI* pWeb)
+					{
+						return S_OK;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE UpdateUI(CWebBrowserUI* pWeb)
+					{
+						return S_OK;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE EnableModeless(CWebBrowserUI* pWeb,
+						/* [in] */ BOOL fEnable)
+					{
+						return S_OK;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE OnDocWindowActivate(CWebBrowserUI* pWeb,
+						/* [in] */ BOOL fActivate)
+					{
+						return S_OK;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE OnFrameWindowActivate(CWebBrowserUI* pWeb,
+						/* [in] */ BOOL fActivate)
+					{
+						return S_OK;
+					}
+
+					virtual HRESULT STDMETHODCALLTYPE ResizeBorder(CWebBrowserUI* pWeb,
+						/* [in] */ LPCRECT prcBorder,
+						/* [in] */ IOleInPlaceUIWindow __RPC_FAR* pUIWindow,
+						/* [in] */ BOOL fRameWindow)
 
 		virtual HRESULT STDMETHODCALLTYPE FilterDataObject(CWebBrowserUI* pWeb, 
 			/* [in] */ IDataObject __RPC_FAR *pDO,

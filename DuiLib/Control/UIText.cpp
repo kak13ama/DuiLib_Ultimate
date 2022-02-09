@@ -13,61 +13,6 @@ namespace DuiLib
 		::ZeroMemory(m_rcLinks, sizeof(m_rcLinks));
 	}
 
-	CTextUI::~CTextUI()
-	{
-	}
-
-	LPCTSTR CTextUI::GetClass() const
-	{
-		return _T("TextUI");
-	}
-
-	LPVOID CTextUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_TEXT) == 0 ) return static_cast<CTextUI*>(this);
-		return CLabelUI::GetInterface(pstrName);
-	}
-
-	UINT CTextUI::GetControlFlags() const
-	{
-		if( IsEnabled() && m_nLinks > 0 ) return UIFLAG_SETCURSOR;
-		else return 0;
-	}
-
-	CDuiString* CTextUI::GetLinkContent(int iIndex)
-	{
-		if( iIndex >= 0 && iIndex < m_nLinks ) return &m_sLinks[iIndex];
-		return NULL;
-	}
-
-	void CTextUI::DoEvent(TEventUI& event)
-	{
-		if( !IsMouseEnabled() && event.Type > UIEVENT__MOUSEBEGIN && event.Type < UIEVENT__MOUSEEND ) {
-			if( m_pParent != NULL ) m_pParent->DoEvent(event);
-			else CLabelUI::DoEvent(event);
-			return;
-		}
-
-		if( event.Type == UIEVENT_SETCURSOR ) {
-			for( int i = 0; i < m_nLinks; i++ ) {
-				if( ::PtInRect(&m_rcLinks[i], event.ptMouse) ) {
-					::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND)));
-					return;
-				}
-			}
-		}
-		if( event.Type == UIEVENT_BUTTONDOWN || event.Type == UIEVENT_DBLCLICK && IsEnabled() ) {
-			for( int i = 0; i < m_nLinks; i++ ) {
-				if( ::PtInRect(&m_rcLinks[i], event.ptMouse) ) {
-					Invalidate();
-					return;
-				}
-			}
-		}
-		if( event.Type == UIEVENT_BUTTONUP && IsEnabled() ) {
-			for( int i = 0; i < m_nLinks; i++ ) {
-				if( ::PtInRect(&m_rcLinks[i], event.ptMouse) ) {
-					m_pManager->SendNotify(this, DUI_MSGTYPE_LINK, i);
 					return;
 				}
 			}

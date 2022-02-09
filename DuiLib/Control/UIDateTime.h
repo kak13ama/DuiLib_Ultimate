@@ -30,6 +30,34 @@ namespace DuiLib
 
 		void DoEvent(TEventUI& event);
 		void SetPos(RECT rc, bool bNeedInvalidate = true);
+		{
+			class CDateTimeWnd;
+
+			/// 时间选择控件
+			class UILIB_API CDateTimeUI : public CLabelUI
+			{
+				DECLARE_DUICONTROL(CDateTimeUI)
+				{
+					class CDateTimeWnd;
+
+					/// 时间选择控件
+					class UILIB_API CDateTimeUI : public CLabelUI
+					{
+						DECLARE_DUICONTROL(CDateTimeUI)
+						{
+							class CDateTimeWnd;
+
+							/// 时间选择控件
+							class UILIB_API CDateTimeUI : public CLabelUI
+							{
+								DECLARE_DUICONTROL(CDateTimeUI)
+								{
+									class CDateTimeWnd;
+
+									/// 时间选择控件
+									class UILIB_API CDateTimeUI : public CLabelUI
+									{
+										DECLARE_DUICONTROL(CDateTimeUI)
 
 		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 

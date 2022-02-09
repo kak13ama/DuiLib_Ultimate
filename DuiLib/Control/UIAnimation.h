@@ -13,7 +13,67 @@ namespace DuiLib {
 
 		virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
 		virtual void StopAnimation(int nAnimationID = 0) = 0;
-		virtual BOOL IsAnimationRunning(int nAnimationID) = 0;
+#include "UIButton.h"
+#pragma once
+
+		namespace DuiLib {
+
+			class UILIB_API IUIAnimation
+			{
+			public:
+				virtual ~IUIAnimation() { NULL; }
+
+				virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
+				virtual void StopAnimation(int nAnimationID = 0) = 0;
+#include "UIButton.h"
+#pragma once
+
+				namespace DuiLib {
+
+					class UILIB_API IUIAnimation
+					{
+					public:
+						virtual ~IUIAnimation() { NULL; }
+
+						virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
+						virtual void StopAnimation(int nAnimationID = 0) = 0;
+#include "UIButton.h"
+#pragma once
+
+						namespace DuiLib {
+
+							class UILIB_API IUIAnimation
+							{
+							public:
+								virtual ~IUIAnimation() { NULL; }
+
+								virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
+								virtual void StopAnimation(int nAnimationID = 0) = 0;
+#include "UIButton.h"
+#pragma once
+
+								namespace DuiLib {
+
+									class UILIB_API IUIAnimation
+									{
+									public:
+										virtual ~IUIAnimation() { NULL; }
+
+										virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
+										virtual void StopAnimation(int nAnimationID = 0) = 0;
+#include "UIButton.h"
+#pragma once
+
+										namespace DuiLib {
+
+											class UILIB_API IUIAnimation
+											{
+											public:
+												virtual ~IUIAnimation() { NULL; }
+
+												virtual BOOL StartAnimation(int nElapse, int nTotalFrame, int nAnimationID = 0, BOOL bLoop = FALSE) = 0;
+												virtual void StopAnimation(int nAnimationID = 0) = 0;
+												virtual BOOL IsAnimationRunning(int nAnimationID) = 0;
 		virtual int GetCurrentFrame(int nAnimationID = 0) = 0;
 		virtual BOOL SetCurrentFrame(int nFrame, int nAnimationID = 0) = 0;
 

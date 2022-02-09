@@ -6,46 +6,6 @@ namespace DuiLib {
 
 	CFadeButtonUI::CFadeButtonUI(): m_bMouseHove( FALSE ), m_bMouseLeave( FALSE )
 	{
-		Attach(this);
-	}
-
-	CFadeButtonUI::~CFadeButtonUI()
-	{
-		StopAnimation();
-	}
-
-	LPCTSTR CFadeButtonUI::GetClass() const
-	{
-		return _T("FadeButtonUI");
-	}
-
-	LPVOID CFadeButtonUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcscmp(pstrName, _T("FadeButton")) == 0 ) 
-			return static_cast<CFadeButtonUI*>(this);
-		return CButtonUI::GetInterface(pstrName);
-	}
-
-	void CFadeButtonUI::SetNormalImage(LPCTSTR pStrImage)
-	{
-		m_sNormalImage = pStrImage;
-		m_sLastImage = m_sNormalImage;
-	}
-
-	void CFadeButtonUI::DoEvent(TEventUI& event)
-	{
-		if( event.Type == UIEVENT_TIMER ) {
-			OnTimer(  event.wParam );
-		}
-		else if(IsEnabled()) {
-			if( event.Type == UIEVENT_MOUSEENTER && !IsAnimationRunning( FADE_IN_ID ) )
-			{
-				m_bFadeAlpha = 0;
-				m_bMouseHove = TRUE;
-				StopAnimation(FADE_OUT_ID);
-				StartAnimation(FADE_ELLAPSE, FADE_FRAME_COUNT, FADE_IN_ID);
-				Invalidate();
-				return;
 			}
 			else if( event.Type == UIEVENT_MOUSELEAVE && !IsAnimationRunning( FADE_OUT_ID ) )
 			{

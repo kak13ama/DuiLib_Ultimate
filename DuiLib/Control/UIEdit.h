@@ -36,7 +36,67 @@ namespace DuiLib
 		void SetNormalImage(LPCTSTR pStrImage);
 		LPCTSTR GetHotImage();
 		void SetHotImage(LPCTSTR pStrImage);
-		LPCTSTR GetFocusedImage();
+		{
+			DECLARE_DUICONTROL(CEditUI)
+			friend class CEditWnd;
+		public:
+			CEditUI();
+
+			LPCTSTR GetClass() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+			UINT GetControlFlags() const;
+
+			void SetEnabled(bool bEnable = true);
+			void SetText(LPCTSTR pstrText);
+			void SetMaxChar(UINT uMax);
+			UINT GetMaxChar();
+			void SetReadOnly(bool bReadOnly);
+			bool IsReadOnly() const;
+			void SetPasswordMode(bool bPasswordMode);
+			bool IsPasswordMode() const;
+			void SetPasswordChar(TCHAR cPasswordChar);
+			TCHAR GetPasswordChar() const;
+			{
+				DECLARE_DUICONTROL(CEditUI)
+				friend class CEditWnd;
+			public:
+				CEditUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+				UINT GetControlFlags() const;
+
+				void SetEnabled(bool bEnable = true);
+				void SetText(LPCTSTR pstrText);
+				void SetMaxChar(UINT uMax);
+				UINT GetMaxChar();
+				void SetReadOnly(bool bReadOnly);
+				bool IsReadOnly() const;
+				void SetPasswordMode(bool bPasswordMode);
+				bool IsPasswordMode() const;
+				void SetPasswordChar(TCHAR cPasswordChar);
+				TCHAR GetPasswordChar() const;
+				{
+					DECLARE_DUICONTROL(CEditUI)
+					friend class CEditWnd;
+				public:
+					CEditUI();
+
+					LPCTSTR GetClass() const;
+					LPVOID GetInterface(LPCTSTR pstrName);
+					UINT GetControlFlags() const;
+
+					void SetEnabled(bool bEnable = true);
+					void SetText(LPCTSTR pstrText);
+					void SetMaxChar(UINT uMax);
+					UINT GetMaxChar();
+					void SetReadOnly(bool bReadOnly);
+					bool IsReadOnly() const;
+					void SetPasswordMode(bool bPasswordMode);
+					bool IsPasswordMode() const;
+					void SetPasswordChar(TCHAR cPasswordChar);
+					TCHAR GetPasswordChar() const;
+					LPCTSTR GetFocusedImage();
 		void SetFocusedImage(LPCTSTR pStrImage);
 		LPCTSTR GetDisabledImage();
 		void SetDisabledImage(LPCTSTR pStrImage);

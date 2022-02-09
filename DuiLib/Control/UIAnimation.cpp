@@ -6,52 +6,6 @@
 namespace DuiLib {
 	struct CUIAnimation::Imp
 	{
-		std::vector<CAnimationData*> m_arAnimations;
-	};
-
-	CUIAnimation::CUIAnimation():m_pImp(new CUIAnimation::Imp())
-	{
-		m_pControl = NULL;
-	}
-
-	CUIAnimation:: ~CUIAnimation()
-	{
-		if(m_pImp)
-		{
-			delete m_pImp;
-			m_pImp = NULL;
-		}
-	}
-
-	void CUIAnimation::Attach(CControlUI* pOwner)
-	{
-		m_pControl = pOwner;
-	}
-
-	BOOL CUIAnimation::StartAnimation(int nElapse, int nTotalFrame, int nAnimationID /*= 0*/, BOOL bLoop/* = FALSE*/)
-	{
-		CAnimationData* pData = GetAnimationDataByID(nAnimationID);
-		if( NULL != pData 
-			|| nElapse <= 0
-			|| nTotalFrame <= 0
-			|| NULL == m_pControl )
-		{
-			ASSERT(FALSE);
-			return FALSE;
-		}
-
-		CAnimationData* pAnimation = new CAnimationData(nElapse, nTotalFrame, nAnimationID, bLoop);
-		if( NULL == pAnimation ) return FALSE;
-		
-		if(m_pControl->GetManager()->SetTimer( m_pControl, nAnimationID, nElapse ))
-		{
-			m_pImp->m_arAnimations.push_back(pAnimation);
-			return TRUE;
-		}
-		return FALSE;
-	}
-
-	void CUIAnimation::StopAnimation(int nAnimationID /*= 0*/)
 	{
 		if(m_pControl == NULL) return;
 
@@ -61,56 +15,6 @@ namespace DuiLib {
 			if( NULL != pData )
 			{
 				m_pControl->GetManager()->KillTimer( m_pControl, nAnimationID );
-				m_pImp->m_arAnimations.erase(std::remove(m_pImp->m_arAnimations.begin(), m_pImp->m_arAnimations.end(), pData), m_pImp->m_arAnimations.end());
-				if(pData != NULL){
-					delete pData;
-					pData = NULL;
-				}
-				return;
-			}
-		}
-		else
-		{
-			int nCount = m_pImp->m_arAnimations.size();
-			for(int i=0; i<nCount; ++i)
-			{
-				CAnimationData* pData = m_pImp->m_arAnimations[i];
-				if(pData) {
-					m_pControl->GetManager()->KillTimer(m_pControl, pData->m_nAnimationID);
-					if(pData != NULL){
-						delete pData;
-						pData = NULL;
-					}
-				}
-			}
-			m_pImp->m_arAnimations.clear();
-		}
-	}
-
-	BOOL CUIAnimation::IsAnimationRunning(int nAnimationID)
-	{
-		CAnimationData* pData = GetAnimationDataByID(nAnimationID);
-		return NULL != pData;
-	}
-
-	int CUIAnimation::GetCurrentFrame(int nAnimationID/* = 0*/)
-	{
-		CAnimationData* pData = GetAnimationDataByID(nAnimationID);
-		if( NULL == pData )
-		{
-			ASSERT(FALSE);
-			return -1;
-		}
-		return pData->m_nCurFrame;
-	}
-
-	BOOL CUIAnimation::SetCurrentFrame(int nFrame, int nAnimationID/* = 0*/)
-	{
-		CAnimationData* pData = GetAnimationDataByID(nAnimationID);
-		if( NULL == pData)
-		{
-			ASSERT(FALSE);
-			return FALSE;
 		}
 
 		if(nFrame >= 0 && nFrame <= pData->m_nTotalFrame)

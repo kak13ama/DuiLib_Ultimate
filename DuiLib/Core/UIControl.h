@@ -74,7 +74,118 @@ namespace DuiLib {
 		bool DrawImage(HDC hDC, LPCTSTR pStrImage, LPCTSTR pStrModify = NULL);
 
 		//边框相关
-		int GetBorderSize() const;
+		typedef CControlUI* (CALLBACK* FINDCONTROLPROC)(CControlUI*, LPVOID);
+
+		class UILIB_API CControlUI
+		{
+			DECLARE_DUICONTROL(CControlUI)
+		public:
+			CControlUI();
+			virtual ~CControlUI();
+
+		public:
+			virtual CDuiString GetName() const;
+			virtual void SetName(LPCTSTR pstrName);
+			virtual LPCTSTR GetClass() const;
+			virtual LPVOID GetInterface(LPCTSTR pstrName);
+			virtual UINT GetControlFlags() const;
+
+			virtual bool Activate();
+			virtual CPaintManagerUI* GetManager() const;
+			virtual void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+			virtual CControlUI* GetParent() const;
+			void setInstance(HINSTANCE instance = NULL) { m_instance = instance; };
+
+			// 定时器
+			bool SetTimer(UINT nTimerID, UINT nElapse);
+			void KillTimer(UINT nTimerID);
+
+			// 文本相关
+			virtual CDuiString GetText() const;
+			virtual void SetText(LPCTSTR pstrText);
+
+			virtual bool IsResourceText() const;
+			virtual void SetResourceText(bool bResource);
+
+			virtual bool IsDragEnabled() const;
+			virtual void SetDragEnable(bool bDrag);
+
+			virtual bool IsDropEnabled() const;
+			typedef CControlUI* (CALLBACK* FINDCONTROLPROC)(CControlUI*, LPVOID);
+
+			class UILIB_API CControlUI
+			{
+				DECLARE_DUICONTROL(CControlUI)
+			public:
+				CControlUI();
+				virtual ~CControlUI();
+
+			public:
+				virtual CDuiString GetName() const;
+				virtual void SetName(LPCTSTR pstrName);
+				virtual LPCTSTR GetClass() const;
+				virtual LPVOID GetInterface(LPCTSTR pstrName);
+				virtual UINT GetControlFlags() const;
+
+				virtual bool Activate();
+				virtual CPaintManagerUI* GetManager() const;
+				virtual void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+				virtual CControlUI* GetParent() const;
+				void setInstance(HINSTANCE instance = NULL) { m_instance = instance; };
+
+				// 定时器
+				bool SetTimer(UINT nTimerID, UINT nElapse);
+				void KillTimer(UINT nTimerID);
+
+				// 文本相关
+				virtual CDuiString GetText() const;
+				virtual void SetText(LPCTSTR pstrText);
+
+				virtual bool IsResourceText() const;
+				virtual void SetResourceText(bool bResource);
+
+				virtual bool IsDragEnabled() const;
+				virtual void SetDragEnable(bool bDrag);
+
+				virtual bool IsDropEnabled() const;
+				typedef CControlUI* (CALLBACK* FINDCONTROLPROC)(CControlUI*, LPVOID);
+
+				class UILIB_API CControlUI
+				{
+					DECLARE_DUICONTROL(CControlUI)
+				public:
+					CControlUI();
+					virtual ~CControlUI();
+
+				public:
+					virtual CDuiString GetName() const;
+					virtual void SetName(LPCTSTR pstrName);
+					virtual LPCTSTR GetClass() const;
+					virtual LPVOID GetInterface(LPCTSTR pstrName);
+					virtual UINT GetControlFlags() const;
+
+					virtual bool Activate();
+					virtual CPaintManagerUI* GetManager() const;
+					virtual void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+					virtual CControlUI* GetParent() const;
+					void setInstance(HINSTANCE instance = NULL) { m_instance = instance; };
+
+					// 定时器
+					bool SetTimer(UINT nTimerID, UINT nElapse);
+					void KillTimer(UINT nTimerID);
+
+					// 文本相关
+					virtual CDuiString GetText() const;
+					virtual void SetText(LPCTSTR pstrText);
+
+					virtual bool IsResourceText() const;
+					virtual void SetResourceText(bool bResource);
+
+					virtual bool IsDragEnabled() const;
+					virtual void SetDragEnable(bool bDrag);
+
+					virtual bool IsDropEnabled() const;
+					int GetBorderSize() const;
 		void SetBorderSize(int nSize);
 		DWORD GetBorderColor() const;
 		void SetBorderColor(DWORD dwBorderColor);

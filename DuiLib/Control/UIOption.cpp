@@ -10,66 +10,6 @@ namespace DuiLib
 
 	COptionUI::~COptionUI()
 	{
-		if( !m_sGroupName.IsEmpty() && m_pManager ) m_pManager->RemoveOptionGroup(m_sGroupName, this);
-	}
-
-	LPCTSTR COptionUI::GetClass() const
-	{
-		return _T("OptionUI");
-	}
-
-	LPVOID COptionUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_OPTION) == 0 ) return static_cast<COptionUI*>(this);
-		return CButtonUI::GetInterface(pstrName);
-	}
-
-	void COptionUI::SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit)
-	{
-		CControlUI::SetManager(pManager, pParent, bInit);
-		if( bInit && !m_sGroupName.IsEmpty() ) {
-			if (m_pManager) m_pManager->AddOptionGroup(m_sGroupName, this);
-		}
-	}
-
-	LPCTSTR COptionUI::GetGroup() const
-	{
-		return m_sGroupName;
-	}
-
-	void COptionUI::SetGroup(LPCTSTR pStrGroupName)
-	{
-		if( pStrGroupName == NULL ) {
-			if( m_sGroupName.IsEmpty() ) return;
-			m_sGroupName.Empty();
-		}
-		else {
-			if( m_sGroupName == pStrGroupName ) return;
-			if (!m_sGroupName.IsEmpty() && m_pManager) m_pManager->RemoveOptionGroup(m_sGroupName, this);
-			m_sGroupName = pStrGroupName;
-		}
-
-		if( !m_sGroupName.IsEmpty() ) {
-			if (m_pManager) m_pManager->AddOptionGroup(m_sGroupName, this);
-		}
-		else {
-			if (m_pManager) m_pManager->RemoveOptionGroup(m_sGroupName, this);
-		}
-
-		Selected(m_bSelected);
-	}
-
-	bool COptionUI::IsSelected() const
-	{
-		return m_bSelected;
-	}
-
-	void COptionUI::Selected(bool bSelected, bool bMsg/* = true*/)
-	{
-		if(m_bSelected == bSelected) return;
-
-		m_bSelected = bSelected;
-		if( m_bSelected ) m_uButtonState |= UISTATE_SELECTED;
 		else m_uButtonState &= ~UISTATE_SELECTED;
 
 		if( m_pManager != NULL ) {

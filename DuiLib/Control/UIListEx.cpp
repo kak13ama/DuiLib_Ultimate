@@ -9,58 +9,6 @@ namespace DuiLib {
 	IMPLEMENT_DUICONTROL(CListExUI)
 
 	CListExUI::CListExUI() : m_pEditUI(NULL), m_pComboBoxUI(NULL), m_bAddMessageFilter(FALSE),m_nRow(-1),m_nColum(-1),m_pXCallback(NULL)
-	{
-	}
-
-	LPCTSTR CListExUI::GetClass() const
-	{
-		return _T("XListUI");
-	}
-
-	UINT CListExUI::GetControlFlags() const
-	{
-		return UIFLAG_TABSTOP;
-	}
-
-	LPVOID CListExUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, _T("ListEx")) == 0 ) return static_cast<IListOwnerUI*>(this);
-		return CListUI::GetInterface(pstrName);
-	}
-	BOOL CListExUI::CheckColumEditable(int nColum)
-	{
-		CListContainerHeaderItemUI* pHItem = static_cast<CListContainerHeaderItemUI*>(m_pHeader->GetItemAt(nColum));
-		return pHItem != NULL? pHItem->GetColumeEditable() : FALSE;
-	}
-	void CListExUI::InitListCtrl()
-	{
-		if (!m_bAddMessageFilter)
-		{
-			GetManager()->AddNotifier(this);
-			m_bAddMessageFilter = TRUE;
-		}
-	}
-	CRichEditUI* CListExUI::GetEditUI()
-	{
-		if (m_pEditUI == NULL)
-		{
-			m_pEditUI = new CRichEditUI;
-			m_pEditUI->SetName(_T("ListEx_Edit"));
-			LPCTSTR pDefaultAttributes = GetManager()->GetDefaultAttributeList(_T("RichEdit"));
-			if( pDefaultAttributes ) {
-				m_pEditUI->ApplyAttributeList(pDefaultAttributes);
-			}
-			m_pEditUI->SetBkColor(0xFFFFFFFF);
-			m_pEditUI->SetRich(false);
-			m_pEditUI->SetMultiLine(false);
-			m_pEditUI->SetWantReturn(true);
-			m_pEditUI->SetFloat(true);
-			m_pEditUI->SetAttribute(_T("autohscroll"), _T("true"));
-			Add(m_pEditUI);
-		}
-		if (m_pComboBoxUI)
-		{
-			RECT rc = {0,0,0,0};
 			m_pComboBoxUI->SetPos(rc);
 		}
 

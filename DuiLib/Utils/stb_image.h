@@ -48,7 +48,106 @@ LICENSE
 
 RECENT REVISION HISTORY:
 
-      2.25  (2020-02-02) fix warnings
+      2.25  (   before you include this file in *one* C or C++ file to create the implementation.
+
+   // i.e. it should look like this:
+   #include ...
+   #include ...
+   #include ...
+   #define STB_IMAGE_IMPLEMENTATION
+   #include "stb_image.h"
+
+   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.
+   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free
+
+
+   QUICK NOTES:
+      Primarily of interest to game developers and other people who can
+          avoid problematic images and only need the trivial interface
+
+      JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+      PNG 1/2/4/8/16-bit-per-channel
+
+      TGA (not sure what subset, if a subset)
+      BMP non-1bpp, non-RLE
+      PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+
+      GIF (*comp always reports as 4-channel)
+      HDR (radiance rgbE format)
+      PIC (Softimage PIC)
+      PNM (PPM and PGM binary only)
+
+      Animated GIF still needs a proper API, but here's one way to do it:
+          http://gist.github.com/urraka/685d9a6340b26b830d49
+
+      - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
+   before you include this file in *one* C or C++ file to create the implementation.
+
+   // i.e. it should look like this:
+   #include ...
+   #include ...
+   #include ...
+   #define STB_IMAGE_IMPLEMENTATION
+   #include "stb_image.h"
+
+   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.
+   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free
+
+
+   QUICK NOTES:
+      Primarily of interest to game developers and other people who can
+          avoid problematic images and only need the trivial interface
+
+      JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+      PNG 1/2/4/8/16-bit-per-channel
+
+      TGA (not sure what subset, if a subset)
+      BMP non-1bpp, non-RLE
+      PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+
+      GIF (*comp always reports as 4-channel)
+      HDR (radiance rgbE format)
+      PIC (Softimage PIC)
+      PNM (PPM and PGM binary only)
+
+      Animated GIF still needs a proper API, but here's one way to do it:
+          http://gist.github.com/urraka/685d9a6340b26b830d49
+
+      - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
+   before you include this file in *one* C or C++ file to create the implementation.
+
+   // i.e. it should look like this:
+   #include ...
+   #include ...
+   #include ...
+   #define STB_IMAGE_IMPLEMENTATION
+   #include "stb_image.h"
+
+   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.
+   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free
+
+
+   QUICK NOTES:
+      Primarily of interest to game developers and other people who can
+          avoid problematic images and only need the trivial interface
+
+      JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+      PNG 1/2/4/8/16-bit-per-channel
+
+      TGA (not sure what subset, if a subset)
+      BMP non-1bpp, non-RLE
+      PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+
+      GIF (*comp always reports as 4-channel)
+      HDR (radiance rgbE format)
+      PIC (Softimage PIC)
+      PNM (PPM and PGM binary only)
+
+      Animated GIF still needs a proper API, but here's one way to do it:
+          http://gist.github.com/urraka/685d9a6340b26b830d49
+
+      - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
+2020-02-02) fix warnings
       2.24  (2020-02-02) fix warnings; thread-local failure_reason and flip_vertically
       2.23  (2019-08-11) fix clang static analysis warning
       2.22  (2019-03-04) gif fixes, fix warnings
@@ -100,7 +199,73 @@ RECENT REVISION HISTORY:
     the Horde3D community   Thomas Ruf         Ronny Chevalier    github:rlyeh
     Janez Zemva             John Bartholomew   Michal Cichon      github:romigrou
     Jonathan Blow           Ken Hamada         Tero Hanninen      github:svdijk
-    Laurent Gomila          Cort Stratton      Sergio Gonzalez    github:snagar
+    Laurent Gomi   before you include this file in *one* C or C++ file to create the implementation.
+
+   // i.e. it should look like this:
+   #include ...
+   #include ...
+   #include ...
+   #define STB_IMAGE_IMPLEMENTATION
+   #include "stb_image.h"
+
+   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.
+   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free
+
+
+   QUICK NOTES:
+      Primarily of interest to game developers and other people who can
+          avoid problematic images and only need the trivial interface
+
+      JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+      PNG 1/2/4/8/16-bit-per-channel
+
+      TGA (not sure what subset, if a subset)
+      BMP non-1bpp, non-RLE
+      PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+
+      GIF (*comp always reports as 4-channel)
+      HDR (radiance rgbE format)
+      PIC (Softimage PIC)
+      PNM (PPM and PGM binary only)
+
+      Animated GIF still needs a proper API, but here's one way to do it:
+          http://gist.github.com/urraka/685d9a6340b26b830d49
+
+      - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
+   before you include this file in *one* C or C++ file to create the implementation.
+
+   // i.e. it should look like this:
+   #include ...
+   #include ...
+   #include ...
+   #define STB_IMAGE_IMPLEMENTATION
+   #include "stb_image.h"
+
+   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.
+   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free
+
+
+   QUICK NOTES:
+      Primarily of interest to game developers and other people who can
+          avoid problematic images and only need the trivial interface
+
+      JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
+      PNG 1/2/4/8/16-bit-per-channel
+
+      TGA (not sure what subset, if a subset)
+      BMP non-1bpp, non-RLE
+      PSD (composited view only, no extra channels, 8/16 bit-per-channel)
+
+      GIF (*comp always reports as 4-channel)
+      HDR (radiance rgbE format)
+      PIC (Softimage PIC)
+      PNM (PPM and PGM binary only)
+
+      Animated GIF still needs a proper API, but here's one way to do it:
+          http://gist.github.com/urraka/685d9a6340b26b830d49
+
+      - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
+la          Cort Stratton      Sergio Gonzalez    github:snagar
     Aruelien Pocheville     Thibault Reuille   Cass Everitt       github:Zelex
     Ryamond Barbiero        Paul Du Bois       Engin Manap        github:grim210
     Aldo Culquicondor       Philipp Wiesemann  Dale Weiler        github:sammyhw

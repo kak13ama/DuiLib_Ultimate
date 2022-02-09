@@ -11,47 +11,6 @@ namespace DuiLib {
 		: m_pCallback(NULL)
 		, m_bScrollSelect(false)
 		, m_iCurSel(-1)
-		, m_iExpandedItem(-1)
-		, m_bMultiSel(false)
-		, m_iFirstSel(-1)
-		, m_bFixedScrollbar(false)
-	{
-		m_pList = new CListBodyUI(this);
-		m_pHeader = new CListHeaderUI;
-		Add(m_pHeader);
-		Add(m_pList);
-
-		// ¡–±Ì≈‰÷√
-		m_ListInfo.nColumns = 0;
-		m_ListInfo.nFont = -1;
-		m_ListInfo.uTextStyle = DT_VCENTER | DT_SINGLELINE;
-		m_ListInfo.dwTextColor = 0xFF000000;
-		m_ListInfo.dwBkColor = 0;
-		m_ListInfo.bAlternateBk = false;
-		m_ListInfo.dwSelectedTextColor = 0xFF000000;
-		m_ListInfo.dwSelectedBkColor = 0xFFC1E3FF;
-		m_ListInfo.dwHotTextColor = 0xFF000000;
-		m_ListInfo.dwHotBkColor = 0xFFE9F5FF;
-		m_ListInfo.dwDisabledTextColor = 0xFFCCCCCC;
-		m_ListInfo.dwDisabledBkColor = 0xFFFFFFFF;
-		m_ListInfo.dwLineColor = 0;
-		m_ListInfo.bShowRowLine = false;
-		m_ListInfo.bShowColumnLine = false;
-		m_ListInfo.bShowHtml = false;
-		m_ListInfo.bMultiExpandable = false;
-		m_ListInfo.bRSelected = false;
-		::ZeroMemory(&m_ListInfo.rcTextPadding, sizeof(m_ListInfo.rcTextPadding));
-		::ZeroMemory(&m_ListInfo.rcColumn, sizeof(m_ListInfo.rcColumn));
-
-	}
-
-	LPCTSTR CListUI::GetClass() const
-	{
-		return _T("ListUI");
-	}
-
-	UINT CListUI::GetControlFlags() const
-	{
 		return UIFLAG_TABSTOP;
 	}
 

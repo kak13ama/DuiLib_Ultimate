@@ -15,63 +15,6 @@ namespace DuiLib
 		return _T("SliderUI");
 	}
 
-	UINT CSliderUI::GetControlFlags() const
-	{
-		if( IsEnabled() ) return UIFLAG_SETCURSOR;
-		else return 0;
-	}
-
-	LPVOID CSliderUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_SLIDER) == 0 ) return static_cast<CSliderUI*>(this);
-		return CProgressUI::GetInterface(pstrName);
-	}
-
-	void CSliderUI::SetEnabled(bool bEnable)
-	{
-		CControlUI::SetEnabled(bEnable);
-		if( !IsEnabled() ) {
-			m_uButtonState = 0;
-		}
-	}
-
-	int CSliderUI::GetChangeStep()
-	{
-		return m_nStep;
-	}
-
-	void CSliderUI::SetChangeStep(int step)
-	{
-		m_nStep = step;
-	}
-
-	void CSliderUI::SetThumbSize(SIZE szXY)
-	{
-		m_szThumb = szXY;
-	}
-
-	RECT CSliderUI::GetThumbRect() const
-	{
-		RECT rcThumb = {0};
-		SIZE m_szThumb = CSliderUI::m_szThumb;
-		if (GetManager() != NULL) {
-			GetManager()->GetDPIObj()->Scale(&m_szThumb);
-		}
-		if( m_bHorizontal ) {
-			int left = m_rcItem.left + (m_rcItem.right - m_rcItem.left - m_szThumb.cx) * (m_nValue - m_nMin) / (m_nMax - m_nMin);
-			int top = (m_rcItem.bottom + m_rcItem.top - m_szThumb.cy) / 2;
-			rcThumb = CDuiRect(left, top, left + m_szThumb.cx, top + m_szThumb.cy); 
-		}
-		else {
-			int left = (m_rcItem.right + m_rcItem.left - m_szThumb.cx) / 2;
-			int top = m_rcItem.bottom - m_szThumb.cy - (m_rcItem.bottom - m_rcItem.top - m_szThumb.cy) * (m_nValue - m_nMin) / (m_nMax - m_nMin);
-			rcThumb = CDuiRect(left, top, left + m_szThumb.cx, top + m_szThumb.cy); 
-		}
-		if(m_pManager != NULL) {
-			//m_pManager->GetDPIObj()->Scale(&rcThumb);
-		}
-		return rcThumb;
-	}
 
 	LPCTSTR CSliderUI::GetThumbImage() const
 	{

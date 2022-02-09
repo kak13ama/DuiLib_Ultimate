@@ -12,7 +12,43 @@ namespace DuiLib {
 		CColorPaletteUI();
 		virtual ~CColorPaletteUI();
 
-		//获取最终被选择的颜色，可以直接用于设置duilib背景色
+		/////////////////////////////////////////////////////////////////////////////////////
+		//
+		class UILIB_API CColorPaletteUI : public CControlUI
+		{
+			DECLARE_DUICONTROL(CColorPaletteUI)
+		public:
+			CColorPaletteUI();
+			virtual ~CColorPaletteUI();
+
+			/////////////////////////////////////////////////////////////////////////////////////
+//
+			class UILIB_API CColorPaletteUI : public CControlUI
+			{
+				DECLARE_DUICONTROL(CColorPaletteUI)
+			public:
+				CColorPaletteUI();
+				virtual ~CColorPaletteUI();
+
+				/////////////////////////////////////////////////////////////////////////////////////
+//
+				class UILIB_API CColorPaletteUI : public CControlUI
+				{
+					DECLARE_DUICONTROL(CColorPaletteUI)
+				public:
+					CColorPaletteUI();
+					virtual ~CColorPaletteUI();
+
+					/////////////////////////////////////////////////////////////////////////////////////
+//
+					class UILIB_API CColorPaletteUI : public CControlUI
+					{
+						DECLARE_DUICONTROL(CColorPaletteUI)
+					public:
+						CColorPaletteUI();
+						virtual ~CColorPaletteUI();
+
+						//获取最终被选择的颜色，可以直接用于设置duilib背景色
 		DWORD GetSelectColor();
 		void SetSelectColor(DWORD dwColor);
 

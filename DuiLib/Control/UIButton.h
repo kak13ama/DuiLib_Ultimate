@@ -30,8 +30,43 @@ namespace DuiLib
 		virtual void SetFocusedImage(LPCTSTR pStrImage);
 		virtual LPCTSTR GetDisabledImage();
 		virtual void SetDisabledImage(LPCTSTR pStrImage);
-		virtual LPCTSTR GetHotForeImage();
-		virtual void SetHotForeImage(LPCTSTR pStrImage);
+		namespace DuiLib
+		{
+			class UILIB_API CButtonUI : public CLabelUI
+			{
+				DECLARE_DUICONTROL(CButtonUI)
+
+			public:
+				CButtonUI();
+
+				namespace DuiLib
+				{
+					class UILIB_API CButtonUI : public CLabelUI
+					{
+						DECLARE_DUICONTROL(CButtonUI)
+
+					public:
+						CButtonUI();
+
+						namespace DuiLib
+						{
+							class UILIB_API CButtonUI : public CLabelUI
+							{
+								DECLARE_DUICONTROL(CButtonUI)
+
+							public:
+								CButtonUI();
+
+								namespace DuiLib
+								{
+									class UILIB_API CButtonUI : public CLabelUI
+									{
+										DECLARE_DUICONTROL(CButtonUI)
+
+									public:
+										CButtonUI();
+
+										virtual void SetHotForeImage(LPCTSTR pStrImage);
 		void SetStateCount(int nCount);
 		int GetStateCount() const;
 		virtual LPCTSTR GetStateImage();

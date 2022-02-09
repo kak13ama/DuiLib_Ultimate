@@ -26,6 +26,48 @@ namespace DuiLib {
 		ULONG           m_cRefCount;
 		FormatEtcArray  m_pFmtEtc;
 		int           m_iCur;
+		THE IMPLIED WARRANTIES OF MERCHANTABILITY AND / OR FITNESS FOR A
+			PARTICULAR PURPOSE.
+			Author: Leon Finker  1 / 2001
+			* *************************************************************************/
+#ifndef __DRAGDROPIMPL_H__
+#define __DRAGDROPIMPL_H__
+#include <shlobj.h>
+#include <vector>
+
+			namespace DuiLib {
+			////////////////////////////////////////////////////////////////////////////////
+			///
+			typedef std::vector<FORMATETC> FormatEtcArray;
+			typedef std::vector<FORMATETC*> PFormatEtcArray;
+			THE IMPLIED WARRANTIES OF MERCHANTABILITY AND / OR FITNESS FOR A
+				PARTICULAR PURPOSE.
+				Author: Leon Finker  1 / 2001
+				* *************************************************************************/
+#ifndef __DRAGDROPIMPL_H__
+#define __DRAGDROPIMPL_H__
+#include <shlobj.h>
+#include <vector>
+
+				namespace DuiLib {
+				////////////////////////////////////////////////////////////////////////////////
+				///
+				typedef std::vector<FORMATETC> FormatEtcArray;
+				typedef std::vector<FORMATETC*> PFormatEtcArray;
+				THE IMPLIED WARRANTIES OF MERCHANTABILITY AND / OR FITNESS FOR A
+					PARTICULAR PURPOSE.
+					Author: Leon Finker  1 / 2001
+					* *************************************************************************/
+#ifndef __DRAGDROPIMPL_H__
+#define __DRAGDROPIMPL_H__
+#include <shlobj.h>
+#include <vector>
+
+					namespace DuiLib {
+					////////////////////////////////////////////////////////////////////////////////
+					///
+					typedef std::vector<FORMATETC> FormatEtcArray;
+					typedef std::vector<FORMATETC*> PFormatEtcArray;
 
 	public:
 		CEnumFormatEtc(const FormatEtcArray& ArrFE);

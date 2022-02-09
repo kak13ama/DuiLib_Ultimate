@@ -8,73 +8,7 @@ namespace DuiLib
 	CButtonUI::CButtonUI()
 		: m_uButtonState(0)
 		, m_iHotFont(-1)
-		, m_iPushedFont(-1)
-		, m_iFocusedFont(-1)
-		, m_dwHotTextColor(0)
-		, m_dwPushedTextColor(0)
-		, m_dwFocusedTextColor(0)
-		, m_dwHotBkColor(0)
-		, m_dwPushedBkColor(0)
-		, m_dwDisabledBkColor(0)
-		, m_iBindTabIndex(-1)
-		, m_nStateCount(0)
-	{
-		m_uTextStyle = DT_SINGLELINE | DT_VCENTER | DT_CENTER;
-	}
-
-	LPCTSTR CButtonUI::GetClass() const
-	{
-		return _T("ButtonUI");
-	}
-
-	LPVOID CButtonUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_BUTTON) == 0 ) return static_cast<CButtonUI*>(this);
-		return CLabelUI::GetInterface(pstrName);
-	}
-
-	UINT CButtonUI::GetControlFlags() const
-	{
-		return (IsKeyboardEnabled() ? UIFLAG_TABSTOP : 0) | (IsEnabled() ? UIFLAG_SETCURSOR : 0);
-	}
-
-	void CButtonUI::DoEvent(TEventUI& event)
-	{
-		if( !IsMouseEnabled() && event.Type > UIEVENT__MOUSEBEGIN && event.Type < UIEVENT__MOUSEEND ) {
-			if( m_pParent != NULL ) m_pParent->DoEvent(event);
-			else CLabelUI::DoEvent(event);
-			return;
-		}
-
-		if( event.Type == UIEVENT_SETFOCUS ) 
-		{
-			Invalidate();
-		}
-		if( event.Type == UIEVENT_KILLFOCUS ) 
-		{
-			Invalidate();
-		}
-		if( event.Type == UIEVENT_KEYDOWN )
-		{
-			if (IsKeyboardEnabled()) {
-				if( event.chKey == VK_SPACE || event.chKey == VK_RETURN ) {
-					Activate();
-					return;
-				}
-			}
-		}		
-		if( event.Type == UIEVENT_BUTTONDOWN || event.Type == UIEVENT_DBLCLICK)
-		{
-			if( ::PtInRect(&m_rcItem, event.ptMouse) && IsEnabled() ) {
-				m_uButtonState |= UISTATE_PUSHED | UISTATE_CAPTURED;
-				Invalidate();
-				if(IsRichEvent()) m_pManager->SendNotify(this, DUI_MSGTYPE_BUTTONDOWN);
-			}
-			return;
-		}	
-		if( event.Type == UIEVENT_MOUSEMOVE )
-		{
-			if( (m_uButtonState & UISTATE_CAPTURED) != 0 ) {
+if( (m_uButtonState & UISTATE_CAPTURED) != 0 ) {
 				if( ::PtInRect(&m_rcItem, event.ptMouse) ) m_uButtonState |= UISTATE_PUSHED;
 				else m_uButtonState &= ~UISTATE_PUSHED;
 				Invalidate();

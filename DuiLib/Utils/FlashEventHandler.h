@@ -36,5 +36,57 @@ namespace DuiLib
 		{
 			return S_OK;
 		}
-	};
+	}; {
+		return S_OK;
+	}
+
+	virtual HRESULT OnProgress(long percentDone)
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT FSCommand(LPCTSTR command, LPCTSTR args)
+	{
+		return S_OK;
+	}
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT OnProgress(long percentDone)
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT FSCommand(LPCTSTR command, LPCTSTR args)
+	{
+		return S_OK;
+	}
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT OnProgress(long percentDone)
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT FSCommand(LPCTSTR command, LPCTSTR args)
+	{
+		return S_OK;
+	}
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT OnProgress(long percentDone)
+	{
+		return S_OK;
+	}
+
+	virtual HRESULT FSCommand(LPCTSTR command, LPCTSTR args)
+	{
+		return S_OK;
+	}
+
 }

@@ -46,8 +46,35 @@ namespace DuiLib {
 		void SetDropBoxSize(SIZE szDropBox);
 		RECT GetDropBoxInset() const;
 		void SetDropBoxInset(RECT szDropBox);
+		/////////////////////////////////////////////////////////////////////////////////////
+		//
 
-		UINT GetListType();
+		class CComboWnd;
+
+		class UILIB_API CComboUI : public CContainerUI, public IListOwnerUI
+		{
+			/////////////////////////////////////////////////////////////////////////////////////
+//
+
+			class CComboWnd;
+
+			class UILIB_API CComboUI : public CContainerUI, public IListOwnerUI
+			{
+				/////////////////////////////////////////////////////////////////////////////////////
+//
+
+				class CComboWnd;
+
+				class UILIB_API CComboUI : public CContainerUI, public IListOwnerUI
+				{
+					/////////////////////////////////////////////////////////////////////////////////////
+//
+
+					class CComboWnd;
+
+					class UILIB_API CComboUI : public CContainerUI, public IListOwnerUI
+					{
+						UINT GetListType();
 		TListInfoUI* GetListInfo();
 		int GetCurSel() const;  
 		bool SelectItem(int iIndex, bool bTakeFocus = false);

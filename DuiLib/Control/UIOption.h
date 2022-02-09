@@ -22,6 +22,58 @@ namespace DuiLib
 
 		LPCTSTR GetSelectedImage();
 		void SetSelectedImage(LPCTSTR pStrImage);
+		namespace DuiLib
+		{
+			class UILIB_API COptionUI : public CButtonUI
+			{
+				DECLARE_DUICONTROL(COptionUI)
+			public:
+				COptionUI();
+				~COptionUI();
+
+				LPCTSTR GetClass() const;
+				LPVOID GetInterface(LPCTSTR pstrName);
+
+				void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+				namespace DuiLib
+				{
+					class UILIB_API COptionUI : public CButtonUI
+					{
+						DECLARE_DUICONTROL(COptionUI)
+					public:
+						COptionUI();
+						~COptionUI();
+
+						LPCTSTR GetClass() const;
+						LPVOID GetInterface(LPCTSTR pstrName);
+
+						void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+						namespace DuiLib
+						{
+							class UILIB_API COptionUI : public CButtonUI
+							{
+								DECLARE_DUICONTROL(COptionUI)
+							public:
+								COptionUI();
+								~COptionUI();
+
+								LPCTSTR GetClass() const;
+								LPVOID GetInterface(LPCTSTR pstrName);
+
+								void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
+								namespace DuiLib
+								{
+									class UILIB_API COptionUI : public CButtonUI
+									{
+										DECLARE_DUICONTROL(COptionUI)
+									public:
+										COptionUI();
+										~COptionUI();
+
+										LPCTSTR GetClass() const;
+										LPVOID GetInterface(LPCTSTR pstrName);
+
+										void SetManager(CPaintManagerUI* pManager, CControlUI* pParent, bool bInit = true);
 
 		LPCTSTR GetSelectedHotImage();
 		void SetSelectedHotImage(LPCTSTR pStrImage);

@@ -33,4 +33,52 @@ namespace DuiLib
 
 } // namespace DuiLib
 
-#endif //__UITEXT_H__
+#endif 
+LPCTSTR GetClass() const;
+UINT GetControlFlags() const;
+LPVOID GetInterface(LPCTSTR pstrName);
+
+CDuiString* GetLinkContent(int iIndex);
+
+void DoEvent(TEventUI& event);
+SIZE EstimateSize(SIZE szAvailable);
+
+void PaintText(HDC hDC);
+
+	protected:
+		enum { MAX_LINK = 8 };
+		int m_nLinks;
+		RECT m_rcLinks[MAX_LINK];
+
+		LPCTSTR GetClass() const;
+		UINT GetControlFlags() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		CDuiString* GetLinkContent(int iIndex);
+
+		void DoEvent(TEventUI& event);
+		SIZE EstimateSize(SIZE szAvailable);
+
+		void PaintText(HDC hDC);
+
+	protected:
+		enum { MAX_LINK = 8 };
+		int m_nLinks;
+		RECT m_rcLinks[MAX_LINK];
+
+		LPCTSTR GetClass() const;
+		UINT GetControlFlags() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		CDuiString* GetLinkContent(int iIndex);
+
+		void DoEvent(TEventUI& event);
+		SIZE EstimateSize(SIZE szAvailable);
+
+		void PaintText(HDC hDC);
+
+	protected:
+		enum { MAX_LINK = 8 };
+		int m_nLinks;
+		RECT m_rcLinks[MAX_LINK];
+		//__UITEXT_H__

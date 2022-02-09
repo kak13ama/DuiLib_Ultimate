@@ -42,7 +42,91 @@ namespace DuiLib {
 			ULONG iChild;
 			ULONG iNext;
 			ULONG iParent;
-			ULONG iData;
+
+			enum
+			{
+				XMLFILE_ENCODING_UTF8 = 0,
+				XMLFILE_ENCODING_UNICODE = 1,
+				XMLFILE_ENCODING_ASNI = 2,
+			};
+
+			class CMarkup;
+			class CMarkupNode;
+
+
+			class UILIB_API CMarkup
+			{
+				friend class CMarkupNode;
+			public:
+				CMarkup(LPCTSTR pstrXML = NULL);
+				~CMarkup();
+
+				bool Load(LPCTSTR pstrXML);
+				bool LoadFromMem(BYTE* pByte, DWORD dwSize, int encoding = XMLFILE_ENCODING_UTF8);
+				bool LoadFromFile(LPCTSTR pstrFilename, int encoding = XMLFILE_ENCODING_UTF8);
+				void Release();
+				bool IsValid() const;
+
+				void SetPreserveWhitespace(bool bPreserve = true);
+				void GetLastErrorMessage(LPTSTR pstrMessage, SIZE_T cchMax) const;
+				void GetLastErrorLocation(LPTSTR pstrSource, SIZE_T cchMax) const;
+
+				enum
+				{
+					XMLFILE_ENCODING_UTF8 = 0,
+					XMLFILE_ENCODING_UNICODE = 1,
+					XMLFILE_ENCODING_ASNI = 2,
+				};
+
+				class CMarkup;
+				class CMarkupNode;
+
+
+				class UILIB_API CMarkup
+				{
+					friend class CMarkupNode;
+				public:
+					CMarkup(LPCTSTR pstrXML = NULL);
+					~CMarkup();
+
+					bool Load(LPCTSTR pstrXML);
+					bool LoadFromMem(BYTE* pByte, DWORD dwSize, int encoding = XMLFILE_ENCODING_UTF8);
+					bool LoadFromFile(LPCTSTR pstrFilename, int encoding = XMLFILE_ENCODING_UTF8);
+					void Release();
+					bool IsValid() const;
+
+					void SetPreserveWhitespace(bool bPreserve = true);
+					void GetLastErrorMessage(LPTSTR pstrMessage, SIZE_T cchMax) const;
+					void GetLastErrorLocation(LPTSTR pstrSource, SIZE_T cchMax) const;
+
+					enum
+					{
+						XMLFILE_ENCODING_UTF8 = 0,
+						XMLFILE_ENCODING_UNICODE = 1,
+						XMLFILE_ENCODING_ASNI = 2,
+					};
+
+					class CMarkup;
+					class CMarkupNode;
+
+
+					class UILIB_API CMarkup
+					{
+						friend class CMarkupNode;
+					public:
+						CMarkup(LPCTSTR pstrXML = NULL);
+						~CMarkup();
+
+						bool Load(LPCTSTR pstrXML);
+						bool LoadFromMem(BYTE* pByte, DWORD dwSize, int encoding = XMLFILE_ENCODING_UTF8);
+						bool LoadFromFile(LPCTSTR pstrFilename, int encoding = XMLFILE_ENCODING_UTF8);
+						void Release();
+						bool IsValid() const;
+
+						void SetPreserveWhitespace(bool bPreserve = true);
+						void GetLastErrorMessage(LPTSTR pstrMessage, SIZE_T cchMax) const;
+						void GetLastErrorLocation(LPTSTR pstrSource, SIZE_T cchMax) const;
+						ULONG iData;
 		} XMLELEMENT;
 
 		LPTSTR m_pstrXML;

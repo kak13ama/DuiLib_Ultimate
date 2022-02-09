@@ -9,61 +9,6 @@ namespace DuiLib
 	//
 	CGroupBoxUI::CGroupBoxUI(): m_uTextStyle(DT_SINGLELINE | DT_VCENTER | DT_CENTER), m_dwTextColor(0), 
 		m_dwDisabledTextColor(0), m_iFont(-1)
-	{
-		SetInset(CDuiRect(20, 25, 20, 20));
-	}
-
-	CGroupBoxUI::~CGroupBoxUI()
-	{
-	}
-
-	LPCTSTR CGroupBoxUI::GetClass() const
-	{
-		return _T("GroupBoxUI");
-	}
-
-	LPVOID CGroupBoxUI::GetInterface(LPCTSTR pstrName)
-	{
-		if( _tcsicmp(pstrName, _T("GroupBox")) == 0 ) return static_cast<CGroupBoxUI*>(this);
-		return CVerticalLayoutUI::GetInterface(pstrName);
-	}
-	void CGroupBoxUI::SetTextColor(DWORD dwTextColor)
-	{
-		m_dwTextColor = dwTextColor;
-		Invalidate();
-	}
-
-	DWORD CGroupBoxUI::GetTextColor() const
-	{
-		return m_dwTextColor;
-	}
-	void CGroupBoxUI::SetDisabledTextColor(DWORD dwTextColor)
-	{
-		m_dwDisabledTextColor = dwTextColor;
-		Invalidate();
-	}
-
-	DWORD CGroupBoxUI::GetDisabledTextColor() const
-	{
-		return m_dwDisabledTextColor;
-	}
-	void CGroupBoxUI::SetFont(int index)
-	{
-		m_iFont = index;
-		Invalidate();
-	}
-
-	int CGroupBoxUI::GetFont() const
-	{
-		return m_iFont;
-	}
-	void CGroupBoxUI::PaintText(HDC hDC)
-	{
-		CDuiString sText = GetText();
-		if( sText.IsEmpty() ) {
-			return;
-		}
-
 		if( m_dwTextColor == 0 ) m_dwTextColor = m_pManager->GetDefaultFontColor();
 		if( m_dwDisabledTextColor == 0 ) m_dwDisabledTextColor = m_pManager->GetDefaultDisabledColor();
 		if( sText.IsEmpty() ) return;

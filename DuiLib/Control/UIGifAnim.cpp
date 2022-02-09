@@ -8,48 +8,6 @@ namespace DuiLib
 
 	CGifAnimUI::CGifAnimUI(void)
 	{
-		m_pGifImage			=	NULL;
-		m_pPropertyItem		=	NULL;
-		m_nFrameCount		=	0;	
-		m_nFramePosition	=	0;	
-		m_bIsAutoPlay		=	true;
-		m_bIsAutoSize		=	false;
-		m_bIsPlaying		=	false;
-
-	}
-
-
-	CGifAnimUI::~CGifAnimUI(void)
-	{
-		DeleteGif();
-		m_pManager->KillTimer( this, EVENT_TIEM_ID );
-
-	}
-
-	LPCTSTR CGifAnimUI::GetClass() const
-	{
-		return _T("GifAnimUI");
-	}
-
-	LPVOID CGifAnimUI::GetInterface( LPCTSTR pstrName )
-	{
-		if( _tcsicmp(pstrName, DUI_CTR_GIFANIM) == 0 ) return static_cast<CGifAnimUI*>(this);
-		return CControlUI::GetInterface(pstrName);
-	}
-
-	void CGifAnimUI::DoInit()
-	{
-		InitGifImage();
-	}
-
-	bool CGifAnimUI::DoPaint(HDC hDC, const RECT& rcPaint, CControlUI* pStopControl)
-	{
-		if( !::IntersectRect( &m_rcPaint, &rcPaint, &m_rcItem ) ) return true;
-		if ( NULL == m_pGifImage )
-		{		
-			InitGifImage();
-		}
-		DrawFrame( hDC );
 		return true;
 	}
 

@@ -18,7 +18,27 @@ namespace DuiLib
 
 		SIZE GetItemSize() const;
 		void SetItemSize(SIZE szItem);
-		int GetColumns() const;
+		i{
+		DECLARE_DUICONTROL(CTileLayoutUI)
+	public:
+		CTileLayoutUI();
+
+		LPCTSTR GetClass() const;
+		LPVOID GetInterface(LPCTSTR pstrName);
+
+		void SetPos(RECT rc, bool bNeedInvalidate = true);
+
+		{
+			DECLARE_DUICONTROL(CTileLayoutUI)
+		public:
+			CTileLayoutUI();
+
+			LPCTSTR GetClass() const;
+			LPVOID GetInterface(LPCTSTR pstrName);
+
+			void SetPos(RECT rc, bool bNeedInvalidate = true);
+
+			nt GetColumns() const;
 		void SetColumns(int nCols);
 
 		void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);

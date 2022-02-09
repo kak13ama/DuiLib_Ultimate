@@ -24,6 +24,51 @@
 
 #include "rpc.h"
 #include "rpcndr.h"
+/* at Mon Jul 23 17:42:46 2001
+ */
+ /* Compiler settings for downloadmgr.idl:
+     Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+     error checks: allocation ref bounds_check enum stub_data
+     VC __declspec() decoration level:
+          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+          DECLSPEC_UUID(), MIDL_INTERFACE()
+ */
+ /* at Mon Jul 23 17:42:46 2001
+  */
+  /* Compiler settings for downloadmgr.idl:
+      Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+      error checks: allocation ref bounds_check enum stub_data
+      VC __declspec() decoration level:
+           __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+           DECLSPEC_UUID(), MIDL_INTERFACE()
+  */
+  /* at Mon Jul 23 17:42:46 2001
+   */
+   /* Compiler settings for downloadmgr.idl:
+       Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+       error checks: allocation ref bounds_check enum stub_data
+       VC __declspec() decoration level:
+            __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+            DECLSPEC_UUID(), MIDL_INTERFACE()
+   */
+   /* at Mon Jul 23 17:42:46 2001
+    */
+    /* Compiler settings for downloadmgr.idl:
+        Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+        error checks: allocation ref bounds_check enum stub_data
+        VC __declspec() decoration level:
+             __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+             DECLSPEC_UUID(), MIDL_INTERFACE()
+    */
+    /* at Mon Jul 23 17:42:46 2001
+     */
+     /* Compiler settings for downloadmgr.idl:
+         Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+         error checks: allocation ref bounds_check enum stub_data
+         VC __declspec() decoration level:
+              __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+              DECLSPEC_UUID(), MIDL_INTERFACE()
+     */
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
@@ -41,7 +86,43 @@
 
 #ifndef __IDownloadManager_FWD_DEFINED__
 #define __IDownloadManager_FWD_DEFINED__
-typedef interface IDownloadManager IDownloadManager;
+typedef interface IDow/* at Mon Jul 23 17:42:46 2001
+ */
+/* Compiler settings for downloadmgr.idl:
+    Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+    error checks: allocation ref bounds_check enum stub_data 
+    VC __declspec() decoration level: 
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
+*/
+/* at Mon Jul 23 17:42:46 2001
+ */
+ /* Compiler settings for downloadmgr.idl:
+     Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+     error checks: allocation ref bounds_check enum stub_data
+     VC __declspec() decoration level:
+          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+          DECLSPEC_UUID(), MIDL_INTERFACE()
+ */
+ /* at Mon Jul 23 17:42:46 2001
+*/
+/* Compiler settings for downloadmgr.idl:
+    Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
+         __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+         DECLSPEC_UUID(), MIDL_INTERFACE()
+*/
+/* at Mon Jul 23 17:42:46 2001
+ */
+ /* Compiler settings for downloadmgr.idl:
+     Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext
+     error checks: allocation ref bounds_check enum stub_data
+     VC __declspec() decoration level:
+          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
+          DECLSPEC_UUID(), MIDL_INTERFACE()
+ */
+    nloadManager IDownloadManager;
 #endif 	/* __IDownloadManager_FWD_DEFINED__ */
 
 

@@ -55,6 +55,54 @@ namespace DuiLib
 
 	class CNotifyPump;
 	typedef void (CNotifyPump::*DUI_PMSG)(TNotifyUI& msg);  //指针类型
+	enum ListType
+	{
+		LT_LIST = 0,
+		LT_COMBO,
+		LT_TREE,
+		LT_MENU,
+	};
+
+	// 鼠标光标定义
+#define DUI_ARROW           32512
+#define DUI_IBEAM           32513
+#define DUI_WAIT            32514
+#define DUI_CROSS           32515
+#define DUI_UPARROW         32516
+#define DUI_SIZE            32640
+#define DUI_ICON            32641
+#define DUI_SIZENWSE        32642
+#define DUI_SIZENESW        32643
+#define DUI_SIZEWE          32644
+#define DUI_SIZENS          32645
+#define DUI_SIZEALL         32646
+#define DUI_NO              32648
+#define DUI_HAND            32649
+
+	enum ListType
+	{
+		LT_LIST = 0,
+		LT_COMBO,
+		LT_TREE,
+		LT_MENU,
+	};
+
+	// 鼠标光标定义
+#define DUI_ARROW           32512
+#define DUI_IBEAM           32513
+#define DUI_WAIT            32514
+#define DUI_CROSS           32515
+#define DUI_UPARROW         32516
+#define DUI_SIZE            32640
+#define DUI_ICON            32641
+#define DUI_SIZENWSE        32642
+#define DUI_SIZENESW        32643
+#define DUI_SIZEWE          32644
+#define DUI_SIZENS          32645
+#define DUI_SIZEALL         32646
+#define DUI_NO              32648
+#define DUI_HAND            32649
+
 
 	union DuiMessageMapFunctions
 	{

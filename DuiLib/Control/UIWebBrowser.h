@@ -36,7 +36,37 @@ namespace DuiLib
 		void Refresh2(int Level);
 		void GoBack();
 		void GoForward();
-		void NavigateHomePage();
+		vo, public IDocHostUIHandler
+			, public IServiceProvider
+			, public IOleCommandTarget
+			, public IDispatch
+			, public ITranslateAccelerator
+			, public IInternetSecurityManager
+		{
+			DECLARE_DUICONTROL(CWebBrowserUI)
+		public:
+			/// 构造函数
+			CWebBrowserUI();
+			virtual ~CWebBrowserUI();
+
+			void SetHomePage(LPCTSTR lpszUrl);
+			LPCTSTR GetHomePage();
+			, public IDocHostUIHandler
+				, public IServiceProvider
+				, public IOleCommandTarget
+				, public IDispatch
+				, public ITranslateAccelerator
+				, public IInternetSecurityManager
+			{
+				DECLARE_DUICONTROL(CWebBrowserUI)
+			public:
+				/// 构造函数
+				CWebBrowserUI();
+				virtual ~CWebBrowserUI();
+
+				void SetHomePage(LPCTSTR lpszUrl);
+				LPCTSTR GetHomePage();
+		id NavigateHomePage();
 		void NavigateUrl(LPCTSTR lpszUrl);
 		virtual bool DoCreateControl();
 		IWebBrowser2* GetWebBrowser2(void);
