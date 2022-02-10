@@ -1,4 +1,9 @@
 #include "StdAfx.h"
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 #ifndef WIN_IMPL_BASE_HPP
 #define WIN_IMPL_BASE_HPP

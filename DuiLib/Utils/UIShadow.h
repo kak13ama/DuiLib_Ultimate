@@ -3,6 +3,11 @@
 
 #pragma once
 #include <map>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 namespace DuiLib
 {

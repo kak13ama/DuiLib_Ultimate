@@ -10,6 +10,11 @@ Author: Leon Finker  1/2001
 #define __DRAGDROPIMPL_H__
 #include <shlobj.h>
 #include <vector>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 namespace DuiLib {
 	////////////////////////////////////////////////////////////////////////////////

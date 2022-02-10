@@ -1,6 +1,11 @@
 #ifndef _VERSIONHELPERS_H_INCLUDED_
 #define _VERSIONHELPERS_H_INCLUDED_
 #include <specstrings.h>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 namespace DuiLib 
 {

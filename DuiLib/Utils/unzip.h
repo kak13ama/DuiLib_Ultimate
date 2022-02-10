@@ -1,5 +1,10 @@
 #ifndef _unzip_H
 #define _unzip_H
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 // UNZIPPING functions -- for unzipping.
 // This file is a repackaged form of extracts from the zlib code available

@@ -3,6 +3,11 @@
 
 #include <map>
 #include <vector>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 template <typename ReturnT, typename ParamT>
 class ReceiverImplBase;

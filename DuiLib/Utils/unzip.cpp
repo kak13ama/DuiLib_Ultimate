@@ -4,6 +4,18 @@
 #include <string.h>
 #include <tchar.h>
 #include "unzip.h"
+#include "downloadmgr.h"
+#include "DPI.h"
+#include "DragDropImpl.h"
+#include "FlashEventHandler.h"
+#include "observer_impl_base.h"
+#include "TrayIcon.h"
+#include "UIDelegate.h"
+#include "UIShadow.h"
+#include "Utils.h"
+#include "VersionHelpers.h"
+#include "WebBrowserEventHandler.h"
+#include "WinImplBase.h"
 
 #pragma warning(disable : 4996)	// disable bogus deprecation warning
 
@@ -41,7 +53,7 @@
 //  Jean-loup Gailly        Mark Adler
 //  jloup@gzip.org          madler@alumni.caltech.edu
 //
-//
+//321
 //  The data format used by the zlib library is described by RFCs (Request for
 //  Comments) 1950 to 1952 in the files ftp://ds.internic.net/rfc/rfc1950.txt
 //  (zlib format), rfc1951.txt (deflate format) and rfc1952.txt (gzip format).

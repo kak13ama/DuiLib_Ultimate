@@ -4,6 +4,11 @@
 #pragma once
 #include "OAIdl.h"
 #include <vector>
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 namespace DuiLib
 {

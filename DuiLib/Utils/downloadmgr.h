@@ -78,6 +78,11 @@
 #include "windows.h"
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
+#include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tchar.h>
 
 #ifndef __downloadmgr_h__
 #define __downloadmgr_h__
